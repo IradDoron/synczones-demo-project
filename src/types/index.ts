@@ -173,15 +173,16 @@ export type LearningEnvironment = {
 		| 'Article'
 		| 'Podcast'
 		| 'Private Lesson'
+		| 'Technology'
 		| 'Other';
-	subLearningEnvironments: LearningEnvironment[];
+	subLearningEnvironments?: LearningEnvironment[];
 };
 
 export type LearningProcess = {
 	id: number;
 	title: string;
 	description: string;
-	learningEnvironments: LearningEnvironment[];
+	learningEnvironmentsIds: number[];
 	isOrdeded: boolean;
 };
 

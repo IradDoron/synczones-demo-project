@@ -12,7 +12,7 @@ const GoalsDisplay = ({ goals }: Props) => {
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>vision ID</th>
+						<th>Vision ID</th>
 						<th>Title</th>
 						<th>Description</th>
 						<th>Start Date</th>

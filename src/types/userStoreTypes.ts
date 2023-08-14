@@ -2,6 +2,8 @@ import {
 	CareerInterest,
 	Goal,
 	Interest,
+	LearningEnvironment,
+	LearningProcess,
 	Talent,
 	Vision,
 	WorkingAttribute,
@@ -23,4 +25,12 @@ export type UserCareerManagerStore = {
 export type UserGoalsManagerStore = {
 	visions: Vision[];
 	goals: Goal[];
+};
+
+/**
+ * Represents a Learning Manager store that contains the list learning environments and processes.
+ */
+export type UserLearningManagerStore = {
+	learningEnvironments: LearningEnvironment[];
+	learningProcesses: LearningProcess[];
 };
