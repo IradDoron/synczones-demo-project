@@ -1,13 +1,6 @@
-import type { UserGoalsManagerStore } from './GoalsManager.d.ts';
+import type { UserGoalsManagerStore } from '@/types';
 
-export type Vision = {
-	id: number;
-	title: string;
-	description: string;
-	createdAt: Date;
-};
-
-export const mockDataGoalsManager: UserGoalsManagerStore = {
+const mockDataGoalsManager: UserGoalsManagerStore = {
 	visions: [
 		{
 			id: 1,
@@ -36,5 +29,17 @@ export const mockDataGoalsManager: UserGoalsManagerStore = {
 			createdAt: new Date('2023-08-01'),
 		},
 	],
-	goals: [],
+	goals: [
+		{
+			id: 1,
+			visionId: 1,
+			title: 'Learn JavaScript well',
+			description: 'Learn JavaScript deeply and master it.',
+			startDate: new Date('2023-08-01'),
+			endDate: new Date('2023-10-01'),
+			isCompleted: false,
+		},
+	],
 };
+
+export default mockDataGoalsManager;
