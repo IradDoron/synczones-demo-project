@@ -32,7 +32,7 @@ const mockDataGoalsManager: UserGoalsManagerStore = {
 	goals: [
 		{
 			id: 1,
-			visionId: 1,
+			relatedVisionsIds: [1, 3],
 			title: 'Learn JavaScript well',
 			description: 'Learn JavaScript deeply and master it.',
 			startDate: new Date('2023-08-01'),

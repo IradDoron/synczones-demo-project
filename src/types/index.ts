@@ -48,7 +48,7 @@ export type Vision = {
  */
 export type Goal = {
 	id: number;
-	visionId: number;
+	relatedVisionsIds: number[];
 	title: string;
 	description: string;
 	startDate: Date;

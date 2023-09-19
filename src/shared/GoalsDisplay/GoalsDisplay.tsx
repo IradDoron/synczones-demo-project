@@ -24,7 +24,16 @@ const GoalsDisplay = ({ goals }: Props) => {
 					{goals.map((goal) => (
 						<tr key={goal.id}>
 							<td>{goal.id}</td>
-							<td>{goal.visionId}</td>
+							<td>
+								{goal.relatedVisionsIds.map((visionId, index) => {
+									const lastIdIndex = goal.relatedVisionsIds.length - 1;
+									if (index !== lastIdIndex) {
+										return <span key={visionId}>{visionId}, </span>;
+									} else {
+										return <span key={visionId}>{visionId}</span>;
+									}
+								})}
+							</td>
 							<td>{goal.title}</td>
 							<td>{goal.description}</td>
 							<td>{goal.startDate.toDateString()}</td>

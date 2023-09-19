@@ -1,5 +1,9 @@
 const OrganizationManagerPage = () => {
-	return <div>Organization Manager Page</div>;
+	return (
+		<div>
+			<h1> Organization Manager Page</h1>
+		</div>
+	);
 };
 
 export default OrganizationManagerPage;
