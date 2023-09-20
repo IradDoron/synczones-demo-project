@@ -1,4 +1,4 @@
-import { UserLearningManagerStore } from '@/types/userStoreTypes';
+import { UserLearningManagerStore } from '@/types';
 
 const mockDataLearningManager: UserLearningManagerStore = {
 	learningEnvironments: [
