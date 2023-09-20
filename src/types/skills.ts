@@ -5,7 +5,12 @@ export type SkillLevel =
 	| 'Advanced'
 	| 'Expert';
 
-export type SkillCategory = string;
+export type SkillCategory = {
+	id: number;
+	title: string;
+	description: string;
+	skillsIds: number[];
+};
 
 export type SkillTag = string;
 
@@ -23,12 +28,9 @@ export type Skill = {
 	title: string;
 	description: string;
 	level: SkillLevel;
-	isInProgress: boolean;
-	relatedSkills: Skill[];
-	category: SkillCategory;
+	inProgress: boolean;
+	relatedSkillsIds: number[];
+	categoriesIds: number[];
 	tags: SkillTag[];
-	dependencies: Skill[];
-	lastTimePracticed: Date;
-	totalMinutesPracticed: number;
-	practiceSections: SkillPracticeSection[];
+	dependencies: number[];
 };
