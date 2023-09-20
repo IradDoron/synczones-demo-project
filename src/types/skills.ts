@@ -29,8 +29,8 @@ export type Skill = {
 	description: string;
 	level: SkillLevel;
 	inProgress: boolean;
-	relatedSkillsIds?: number[];
-	categoriesIds?: number[];
-	tags?: SkillTag[];
-	dependencies?: number[];
+	relatedSkillsIds: number[];
+	categoriesIds: number[];
+	tags: SkillTag[];
+	dependencies: number[];
 };

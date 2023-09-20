@@ -7,6 +7,12 @@ const mockDataSkillsCategories: SkillCategory[] = [
 		description: 'Programming languages',
 		skillsIds: [1],
 	},
+	{
+		id: 2,
+		title: 'Backend',
+		description: 'Backend',
+		skillsIds: [1, 3],
+	},
 ];
 
 export default mockDataSkillsCategories;

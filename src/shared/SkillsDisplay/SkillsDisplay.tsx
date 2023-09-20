@@ -22,7 +22,7 @@ const SkillsDisplay = ({ skills }: Props) => {
 		return Object.keys(obj) as (keyof T)[];
 	}
 
-	const skillKeys = getKeys<Skill>(skills[0]);
+	const skillKeys = getKeys<Skill>(skills[2]);
 
 	console.log(skillKeys);
 
@@ -47,6 +47,8 @@ const SkillsDisplay = ({ skills }: Props) => {
 							inProgress,
 							categoriesIds,
 							tags,
+							dependencies,
+							relatedSkillsIds,
 						} = skill;
 
 						return (
@@ -58,6 +60,8 @@ const SkillsDisplay = ({ skills }: Props) => {
 								<td>{inProgress ? 'Yes' : 'No'}</td>
 								<td>{getCommaSeparatedStringsFromArray(categoriesIds)}</td>
 								<td>{getCommaSeparatedStringsFromArray(tags)}</td>
+								<td>{getCommaSeparatedStringsFromArray(dependencies)}</td>
+								<td>{getCommaSeparatedStringsFromArray(relatedSkillsIds)}</td>
 							</tr>
 						);
 					})}
