@@ -28,6 +28,13 @@ const mockDataGoalsManager: UserGoalsManagerStore = {
 				'Find a girlfriend, get married, have kids and raise them well.',
 			createdAt: new Date('2023-08-01'),
 		},
+		{
+			id: 5,
+			title: 'Be a great musician, and teach others',
+			description:
+				'Be a great musician, and teach others how to be great musicians.',
+			createdAt: new Date('2023-08-01'),
+		},
 	],
 	goals: [
 		{
