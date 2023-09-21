@@ -105,7 +105,7 @@ export type VisionComponent = {
  * The first step is the final set of goals to be achieved.
  * The last step is the initial set of goals to be achieved.
  */
-export type VisionLadder = {
+export type VisionComponentLadder = {
 	id: number;
 	visionComponentId: number;
 	steps: number[][];

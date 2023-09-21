@@ -1,3 +1,5 @@
+import { Vision, VisionComponent, VisionComponentLadder } from '@/types';
+
 export const getCommaSeparatedStringsFromArray = (
 	array: (string | number)[] | undefined
 ) => {
@@ -13,4 +15,54 @@ export const getCommaSeparatedStringsFromArray = (
 		}
 	});
 	return result;
+};
+
+export const getItemById = (arr: any[], id: number) => {
+	return arr.find((item) => item.id === id);
+};
+
+export const getVisionComponentsByVisionId = (
+	visionComponents: VisionComponent[],
+	visionId: number
+) => {
+	return visionComponents.filter((visionComponent) =>
+		visionComponent.relatedVisionsIds.includes(visionId)
+	);
+};
+
+export const getVisionComponentsLaddersByVisionComponentsIds = (
+	visionComponentsLadders: VisionComponentLadder[],
+	visionComponentsIds: number[]
+) => {
+	const result: VisionComponentLadder[] = [];
+	visionComponentsIds.forEach((visionComponentsId) => {
+		const visionComponentLadder = visionComponentsLadders.find(
+			(visionComponentLadder) =>
+				visionComponentLadder.visionComponentId === visionComponentsId
+		);
+		if (visionComponentLadder) {
+			result.push(visionComponentLadder);
+		}
+	});
+
+	return result;
+};
+
+export const getVisionComponentsIdsByVisionId = (
+	visionComponents: VisionComponent[],
+	visionId: number
+) => {
+	const visionVisionComponents = getVisionComponentsByVisionId(
+		visionComponents,
+		visionId
+	);
+	return visionVisionComponents.map((visionComponent) => visionComponent.id);
+};
+
+export const getVisionTitleByVisionId = (
+	visions: Vision[],
+	visionId: number
+) => {
+	const vision = getItemById(visions, visionId);
+	return vision ? vision.title : '';
 };
