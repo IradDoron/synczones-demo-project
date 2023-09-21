@@ -7,7 +7,7 @@ type Props = {
 const GoalsDisplay = ({ goals }: Props) => {
 	return (
 		<div>
-			<h1>Goals</h1>
+			<h2>Goals</h2>
 			<table>
 				<thead>
 					<tr>
@@ -15,8 +15,6 @@ const GoalsDisplay = ({ goals }: Props) => {
 						<th>Vision ID</th>
 						<th>Title</th>
 						<th>Description</th>
-						<th>Start Date</th>
-						<th>End Date</th>
 						<th>Is Completed</th>
 					</tr>
 				</thead>
@@ -36,8 +34,6 @@ const GoalsDisplay = ({ goals }: Props) => {
 							</td>
 							<td>{goal.title}</td>
 							<td>{goal.description}</td>
-							<td>{goal.startDate.toDateString()}</td>
-							<td>{goal.endDate.toDateString()}</td>
 							<td>{goal.isCompleted ? 'True' : 'False'}</td>
 						</tr>
 					))}

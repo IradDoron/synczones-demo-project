@@ -7,7 +7,7 @@ type Props = {
 const VisionsDisplay = ({ visions }: Props) => {
 	return (
 		<div>
-			<h1>Visions</h1>
+			<h2>Visions</h2>
 			<table>
 				<thead>
 					<tr>
