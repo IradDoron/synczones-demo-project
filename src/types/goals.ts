@@ -98,4 +98,5 @@ export type VisionComponent = {
 	id: number;
 	title: string;
 	description: string;
+	relatedVisionsIds: number[];
 };
