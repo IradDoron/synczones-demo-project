@@ -93,3 +93,9 @@ export type UpdateGoalPayload = {
 export type DeleteGoalPayload = {
 	id: number;
 };
+
+export type VisionComponent = {
+	id: number;
+	title: string;
+	description: string;
+};
