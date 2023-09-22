@@ -74,21 +74,20 @@ const VisionLadderDisplay = ({ visionId }: Props) => {
 					</tr>
 				</tbody>
 			</table>
-			<div></div>
-			{visionComponentsLadders.length > 0 && (
-				<div>
-					<section>
-						{visionComponentsLadders.map((visionComponentLadder) => {
-							return (
-								<VisionComponentLadderDisplay
-									key={visionComponentLadder.id}
-									visionLadder={visionComponentLadder}
-								/>
-							);
-						})}
-					</section>
-				</div>
-			)}
+
+			<div>
+				<section>
+					{visionComponentsLadders.map((visionComponentLadder) => {
+						return (
+							<VisionComponentLadderDisplay
+								key={visionComponentLadder.id}
+								visionLadder={visionComponentLadder}
+							/>
+						);
+					})}
+				</section>
+			</div>
+
 			<br />
 			<br />
 		</div>

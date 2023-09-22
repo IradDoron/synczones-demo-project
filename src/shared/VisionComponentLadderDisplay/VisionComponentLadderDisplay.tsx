@@ -15,11 +15,7 @@ const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
 	)?.title;
 	return (
 		<div>
-			<br />
-			<h3>
-				Vision Component Ladder: <span>{visionComponentTitle}</span>
-			</h3>
-			<br />
+			<h3>{visionComponentTitle}</h3>
 			<table>
 				<thead>
 					<tr>
@@ -38,23 +34,27 @@ const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
 			</table>
 
 			<br />
+			<p>
+				What should you do to achieve this vision component? Read the table from
+				bottom to top.
+			</p>
 			<br />
 
-			{steps.map((step, index) => {
-				const { title, description, goalIds } = step;
-				return (
-					<table key={index}>
-						<thead>
-							<tr>
-								<th>Step</th>
-								<th>Title</th>
-								<th>Description</th>
-								<th>Goals IDs</th>
-								<th>Goals</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
+			<table>
+				<thead>
+					<tr>
+						<th>Step</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Goals IDs</th>
+						<th>Goals</th>
+					</tr>
+				</thead>
+				<tbody>
+					{steps.map((step, index) => {
+						const { title, description, goalIds } = step;
+						return (
+							<tr key={title}>
 								<td>{steps.length - index}</td>
 								<td>{title}</td>
 								<td>{description}</td>
@@ -75,10 +75,10 @@ const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
 									</ul>
 								</td>
 							</tr>
-						</tbody>
-					</table>
-				);
-			})}
+						);
+					})}
+				</tbody>
+			</table>
 		</div>
 	);
 };

@@ -10,6 +10,16 @@ const mockDataVisionLadders: VisionComponentLadder[] = [
 				description: 'Learn full stack tech to build full stack apps.',
 				goalIds: [1, 2, 3],
 			},
+			{
+				title: 'Learn the basic Backend Tech',
+				description: 'Learn the basic backend tech to build backend apps.',
+				goalIds: [],
+			},
+			{
+				title: 'Learn the basic Frontend Tech',
+				description: 'Learn the basic frontend tech to build frontend apps.',
+				goalIds: [],
+			},
 		],
 	},
 ];
