@@ -41,11 +41,14 @@ const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
 			<br />
 
 			{steps.map((step, index) => {
+				const { title, description, goalIds } = step;
 				return (
 					<table key={index}>
 						<thead>
 							<tr>
 								<th>Step</th>
+								<th>Title</th>
+								<th>Description</th>
 								<th>Goals IDs</th>
 								<th>Goals</th>
 							</tr>
@@ -53,14 +56,16 @@ const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
 						<tbody>
 							<tr>
 								<td>{steps.length - index}</td>
-								<td>{getCommaSeparatedStringsFromArray(step)}</td>
+								<td>{title}</td>
+								<td>{description}</td>
+								<td>{getCommaSeparatedStringsFromArray(goalIds)}</td>
 								<td>
 									<ul
 										style={{
 											paddingLeft: '2rem',
 										}}
 									>
-										{step.map((goalId) => {
+										{goalIds.map((goalId) => {
 											return (
 												<li key={goalId}>
 													{getItemById(mockDataGoals, goalId)?.title}

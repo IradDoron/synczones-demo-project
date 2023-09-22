@@ -15,6 +15,13 @@ const mockDataGoals: Goal[] = [
 		description: 'Learn React deeply and master it.',
 		isCompleted: false,
 	},
+	{
+		id: 3,
+		relatedVisionsIds: [1],
+		title: 'Learn Next.js well',
+		description: 'Learn Next.js deeply and master it.',
+		isCompleted: false,
+	},
 ];
 
 export default mockDataGoals;

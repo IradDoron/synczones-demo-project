@@ -108,5 +108,11 @@ export type VisionComponent = {
 export type VisionComponentLadder = {
 	id: number;
 	visionComponentId: number;
-	steps: number[][];
+	steps: VisionLadderStep[];
+};
+
+export type VisionLadderStep = {
+	title: string;
+	description: string;
+	goalIds: number[];
 };
