@@ -66,3 +66,11 @@ export const getVisionTitleByVisionId = (
 	const vision = getItemById(visions, visionId);
 	return vision ? vision.title : '';
 };
+
+export const kebabCaseToTitleCase = (kebabCaseString: string) => {
+	const words = kebabCaseString.split('-');
+	const result = words.map((word) => {
+		return word[0].toUpperCase() + word.slice(1);
+	});
+	return result.join(' ');
+};
