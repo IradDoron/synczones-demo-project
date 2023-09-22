@@ -8,7 +8,8 @@ type Props = {
 const VisionComponentsDisplay = ({ visionComponents }: Props) => {
 	return (
 		<div>
-			<h2>Vision Components</h2>
+			<h2>All Vision Components</h2>
+
 			<table>
 				<thead>
 					<tr>
@@ -20,7 +21,6 @@ const VisionComponentsDisplay = ({ visionComponents }: Props) => {
 				</thead>
 				<tbody>
 					{visionComponents.map((visionComponent) => {
-						console.log(visionComponent);
 						const { id, title, description, relatedVisionsIds } =
 							visionComponent;
 						return (

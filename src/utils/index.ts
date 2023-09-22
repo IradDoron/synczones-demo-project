@@ -82,3 +82,27 @@ export const kebabCaseToTitleCase = (kebabCaseString: string) => {
 	});
 	return result.join(' ');
 };
+
+export const getAllRelatedVisionsIdsFromVisionsComponents = (
+	visionsComponents: VisionComponent[]
+) => {
+	const visionsIdsSet = new Set<number>();
+	visionsComponents.forEach((visionComponent) => {
+		const { relatedVisionsIds } = visionComponent;
+		relatedVisionsIds.forEach((relatedVisionId) => {
+			visionsIdsSet.add(relatedVisionId);
+		});
+	});
+	const visionsIds = Array.from(visionsIdsSet);
+	return visionsIds;
+};
+
+export const getAllVisionComponentsOfVisionByVisionId = (
+	visionsComponents: VisionComponent[],
+	visionId: number
+) => {
+	const visionComponents = visionsComponents.filter((visionComponent) =>
+		visionComponent.relatedVisionsIds.includes(visionId)
+	);
+	return visionComponents;
+};
