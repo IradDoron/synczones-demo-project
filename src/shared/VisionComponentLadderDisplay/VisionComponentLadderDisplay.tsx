@@ -1,11 +1,7 @@
 import mockDataVisionComponentLadders from '@/data/mockDataVisionComponentLadders';
-import mockDataVisionComponents from '@/data/mockDataVisionComponents';
 import VisionComponentSteps from '@/shared/VisionComponentSteps';
 import VisionComponentSummary from '@/shared/VisionComponentSummary';
-import { VisionComponent, VisionComponentLadder } from '@/types';
 import {
-	getItemById,
-	getVisionComponentByVisionComponentId,
 	getVisionComponentStepsFromVisionComponentId,
 	isVisionComponentHasVisionComponentLadder,
 } from '@/utils';
@@ -31,13 +27,19 @@ const VisionComponentLadderDisplay = ({ visionComponentId }: Props) => {
 				<div>
 					<VisionComponentSummary visionComponentId={visionComponentId} />
 					<br />
+					<p>What should you do to acomplish this vision component?</p>
 					<VisionComponentSteps steps={steps} />
 				</div>
 			) : (
 				<div>
 					<VisionComponentSummary visionComponentId={visionComponentId} />
+					<br />
+					<p>What should you do to acomplish this vision component?</p>
+					<VisionComponentSteps steps={steps} />
 				</div>
 			)}
+			<br />
+			<br />
 		</div>
 	);
 };
