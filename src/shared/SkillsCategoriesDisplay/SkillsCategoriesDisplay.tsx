@@ -12,8 +12,6 @@ const SkillsCategoriesDisplay = ({ skillsCategories }: Props) => {
 
 	const skillCategoryKeys = getKeys<SkillCategory>(skillsCategories[0]);
 
-	console.log(skillCategoryKeys);
-
 	return (
 		<div>
 			<h2>Skills Categories Display</h2>

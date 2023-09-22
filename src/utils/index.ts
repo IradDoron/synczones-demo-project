@@ -1,9 +1,13 @@
-import { Vision, VisionComponent, VisionComponentLadder } from '@/types';
+import {
+	Vision,
+	VisionComponent,
+	VisionComponentLadder,
+	VisionLadderStep,
+} from '@/types';
 
 export const getCommaSeparatedStringsFromArray = (
 	array: (string | number)[] | undefined
 ) => {
-	console.log('array', array);
 	if (!array) {
 		return '';
 	}
@@ -105,4 +109,59 @@ export const getAllVisionComponentsOfVisionByVisionId = (
 		visionComponent.relatedVisionsIds.includes(visionId)
 	);
 	return visionComponents;
+};
+
+export const getVisionComponentLadderFromVisionComponentId = (
+	visionComponentsLadders: VisionComponentLadder[],
+	visionComponentId: number
+) => {
+	const visionComponentLadder = visionComponentsLadders.find(
+		(visionComponentLadder) =>
+			visionComponentLadder.visionComponentId === visionComponentId
+	);
+	return visionComponentLadder;
+};
+
+export const getVisionComponentByVisionComponentId = (
+	visionsComponents: VisionComponent[],
+	visionComponentId: number
+) => {
+	const visionComponent = visionsComponents.find(
+		(visionComponent) => visionComponent.id === visionComponentId
+	);
+	return visionComponent;
+};
+
+export const isVisionComponentHasVisionComponentLadder = (
+	visionComponentId: number,
+	visionComponentsLadders: VisionComponentLadder[]
+) => {
+	const visionComponentLadder = visionComponentsLadders.find(
+		(visionComponentLadder) =>
+			visionComponentLadder.visionComponentId === visionComponentId
+	);
+	return !!visionComponentLadder;
+};
+
+export const getVisionComponentStepsFromVisionComponentId = (
+	visionComponentsLadders: VisionComponentLadder[],
+	visionComponentId: number
+) => {
+	const hasLadder = isVisionComponentHasVisionComponentLadder(
+		visionComponentId,
+		visionComponentsLadders
+	);
+
+	if (!hasLadder) {
+		return [];
+	}
+
+	const ladder = getVisionComponentLadderFromVisionComponentId(
+		visionComponentsLadders,
+		visionComponentId
+	) as VisionComponentLadder;
+
+	const { steps } = ladder;
+
+	return steps;
 };

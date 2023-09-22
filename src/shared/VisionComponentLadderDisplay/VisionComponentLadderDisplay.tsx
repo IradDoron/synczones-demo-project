@@ -1,84 +1,43 @@
-import mockDataGoals from '@/data/mockDataGoals';
+import mockDataVisionComponentLadders from '@/data/mockDataVisionComponentLadders';
 import mockDataVisionComponents from '@/data/mockDataVisionComponents';
-import { VisionComponentLadder } from '@/types';
-import { getCommaSeparatedStringsFromArray, getItemById } from '@/utils';
+import VisionComponentSteps from '@/shared/VisionComponentSteps';
+import VisionComponentSummary from '@/shared/VisionComponentSummary';
+import { VisionComponent, VisionComponentLadder } from '@/types';
+import {
+	getItemById,
+	getVisionComponentByVisionComponentId,
+	getVisionComponentStepsFromVisionComponentId,
+	isVisionComponentHasVisionComponentLadder,
+} from '@/utils';
 
 type Props = {
-	visionLadder: VisionComponentLadder;
+	visionComponentId: number;
 };
 
-const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
-	const { id, visionComponentId, steps } = visionLadder;
-	const visionComponentTitle = getItemById(
-		mockDataVisionComponents,
+const VisionComponentLadderDisplay = ({ visionComponentId }: Props) => {
+	const hasLadder = isVisionComponentHasVisionComponentLadder(
+		visionComponentId,
+		mockDataVisionComponentLadders
+	);
+
+	const steps = getVisionComponentStepsFromVisionComponentId(
+		mockDataVisionComponentLadders,
 		visionComponentId
-	)?.title;
+	);
+
 	return (
 		<div>
-			<h3>{visionComponentTitle}</h3>
-			<table>
-				<thead>
-					<tr>
-						<th>Vision Component Ladder ID</th>
-						<th>Vision Component ID</th>
-						<th>Vision Component Title</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{id}</td>
-						<td>{visionComponentId}</td>
-						<td>{visionComponentTitle}</td>
-					</tr>
-				</tbody>
-			</table>
-
-			<br />
-			<p>
-				What should you do to achieve this vision component? Read the table from
-				bottom to top.
-			</p>
-			<br />
-
-			<table>
-				<thead>
-					<tr>
-						<th>Step</th>
-						<th>Title</th>
-						<th>Description</th>
-						<th>Goals IDs</th>
-						<th>Goals</th>
-					</tr>
-				</thead>
-				<tbody>
-					{steps.map((step, index) => {
-						const { title, description, goalIds } = step;
-						return (
-							<tr key={title}>
-								<td>{steps.length - index}</td>
-								<td>{title}</td>
-								<td>{description}</td>
-								<td>{getCommaSeparatedStringsFromArray(goalIds)}</td>
-								<td>
-									<ul
-										style={{
-											paddingLeft: '2rem',
-										}}
-									>
-										{goalIds.map((goalId) => {
-											return (
-												<li key={goalId}>
-													{getItemById(mockDataGoals, goalId)?.title}
-												</li>
-											);
-										})}
-									</ul>
-								</td>
-							</tr>
-						);
-					})}
-				</tbody>
-			</table>
+			{hasLadder ? (
+				<div>
+					<VisionComponentSummary visionComponentId={visionComponentId} />
+					<br />
+					<VisionComponentSteps steps={steps} />
+				</div>
+			) : (
+				<div>
+					<VisionComponentSummary visionComponentId={visionComponentId} />
+				</div>
+			)}
 		</div>
 	);
 };

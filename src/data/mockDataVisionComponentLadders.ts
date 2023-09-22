@@ -1,6 +1,6 @@
 import { VisionComponentLadder } from '@/types';
 
-const mockDataVisionLadders: VisionComponentLadder[] = [
+const mockDataVisionComponentLadders: VisionComponentLadder[] = [
 	{
 		id: 1,
 		visionComponentId: 1,
@@ -24,4 +24,4 @@ const mockDataVisionLadders: VisionComponentLadder[] = [
 	},
 ];
 
-export default mockDataVisionLadders;
+export default mockDataVisionComponentLadders;
