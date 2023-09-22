@@ -67,6 +67,14 @@ export const getVisionTitleByVisionId = (
 	return vision ? vision.title : '';
 };
 
+export const getVisionDescriptionByVisionId = (
+	visions: Vision[],
+	visionId: number
+) => {
+	const vision = getItemById(visions, visionId);
+	return vision ? vision.description : '';
+};
+
 export const kebabCaseToTitleCase = (kebabCaseString: string) => {
 	const words = kebabCaseString.split('-');
 	const result = words.map((word) => {

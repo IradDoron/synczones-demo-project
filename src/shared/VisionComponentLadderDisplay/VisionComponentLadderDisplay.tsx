@@ -9,44 +9,69 @@ type Props = {
 
 const VisionComponentLadderDisplay = ({ visionLadder }: Props) => {
 	const { id, visionComponentId, steps } = visionLadder;
+	const visionComponentTitle = getItemById(
+		mockDataVisionComponents,
+		visionComponentId
+	)?.title;
 	return (
 		<div>
-			<h2>Vision Component Ladder Display</h2>
-			<p>
-				ID: <span>{id}</span>
-			</p>
-			<p>
-				Vision Component ID: <span>{visionComponentId}</span>
-			</p>
-			<p>
-				Vision Component Title:{' '}
-				<span>
-					{getItemById(mockDataVisionComponents, visionComponentId)?.title}
-				</span>
-			</p>
+			<br />
+			<h3>
+				Vision Component Ladder: <span>{visionComponentTitle}</span>
+			</h3>
+			<br />
+			<table>
+				<thead>
+					<tr>
+						<th>Vision Component Ladder ID</th>
+						<th>Vision Component ID</th>
+						<th>Vision Component Title</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{id}</td>
+						<td>{visionComponentId}</td>
+						<td>{visionComponentTitle}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<br />
+			<br />
+
 			{steps.map((step, index) => {
 				return (
-					<div key={index}>
-						<p>
-							Step: <span>{steps.length - index}</span>
-						</p>
-						<p>
-							Goals IDs: <span>{getCommaSeparatedStringsFromArray(step)}</span>
-						</p>
-						<ul
-							style={{
-								paddingLeft: '2rem',
-							}}
-						>
-							{step.map((goalId) => {
-								return (
-									<li key={goalId}>
-										{getItemById(mockDataGoals, goalId)?.title}
-									</li>
-								);
-							})}
-						</ul>
-					</div>
+					<table key={index}>
+						<thead>
+							<tr>
+								<th>Step</th>
+								<th>Goals IDs</th>
+								<th>Goals</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>{steps.length - index}</td>
+								<td>{getCommaSeparatedStringsFromArray(step)}</td>
+								<td>
+									<ul
+										style={{
+											paddingLeft: '2rem',
+										}}
+									>
+										{step.map((goalId) => {
+											return (
+												<li key={goalId}>
+													{getItemById(mockDataGoals, goalId)?.title}
+												</li>
+											);
+										})}
+									</ul>
+								</td>
+							</tr>
+						</tbody>
+					</table>
 				);
 			})}
 		</div>

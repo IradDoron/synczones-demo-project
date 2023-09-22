@@ -6,6 +6,7 @@ import {
 	getVisionComponentsByVisionId,
 	getVisionComponentsIdsByVisionId,
 	getVisionComponentsLaddersByVisionComponentsIds,
+	getVisionDescriptionByVisionId,
 	getVisionTitleByVisionId,
 } from '@/utils';
 
@@ -14,6 +15,11 @@ type Props = {
 };
 
 const VisionLadderDisplay = ({ visionId }: Props) => {
+	const visionTitle = getVisionTitleByVisionId(mockDataVisions, visionId);
+	const visionDescription = getVisionDescriptionByVisionId(
+		mockDataVisions,
+		visionId
+	);
 	const visionComponents = getVisionComponentsByVisionId(
 		mockDataVisionComponents,
 		visionId
@@ -34,34 +40,43 @@ const VisionLadderDisplay = ({ visionId }: Props) => {
 
 	return (
 		<div>
-			<h2>Vision Ladder</h2>
-			<div>
-				<h3>
-					Vision ID: <span>{visionId}</span>
-				</h3>
-				<h3>
-					Vision Title:{' '}
-					<span>{getVisionTitleByVisionId(mockDataVisions, visionId)}</span>
-				</h3>
-				{visionComponents.length > 0 && (
-					<div>
-						<h3>Vision Components</h3>
-						<ul
-							style={{
-								paddingLeft: '2rem',
-							}}
-						>
-							{visionComponents.map((visionComponent) => {
-								const { id, title } = visionComponent;
-								return <li key={id}>{title}</li>;
-							})}
-						</ul>
-					</div>
-				)}
-			</div>
+			<h2>{visionTitle}</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Vision ID</th>
+						<th>Vision Title</th>
+						<th>Vision Description</th>
+						<th>Vision Components</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{visionId}</td>
+						<td>{visionTitle}</td>
+						<td>{visionDescription}</td>
+						<td>
+							{visionComponents.length > 0 && (
+								<div>
+									<ul
+										style={{
+											paddingLeft: '2rem',
+										}}
+									>
+										{visionComponents.map((visionComponent) => {
+											const { id, title } = visionComponent;
+											return <li key={id}>{title}</li>;
+										})}
+									</ul>
+								</div>
+							)}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div></div>
 			{visionComponentsLadders.length > 0 && (
 				<div>
-					<h3>Vision Components Ladders</h3>
 					<section>
 						{visionComponentsLadders.map((visionComponentLadder) => {
 							return (
