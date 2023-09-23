@@ -17,7 +17,7 @@ const VisionLadderPage = () => {
 		visionTitleInKebabCase
 	) as Vision;
 
-	const { title, id } = visionData;
+	const { id } = visionData;
 
 	return (
 		<div>
