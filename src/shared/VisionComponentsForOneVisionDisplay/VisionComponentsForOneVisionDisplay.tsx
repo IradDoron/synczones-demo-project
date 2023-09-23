@@ -19,6 +19,7 @@ const VisionComponentsForOneVisionDisplay = ({ visionId }: Props) => {
 			<h2>
 				Vision Components For: <span>{title}</span>
 			</h2>
+			<p>What are the components that compose this vision?</p>
 			<table>
 				<thead>
 					<tr>

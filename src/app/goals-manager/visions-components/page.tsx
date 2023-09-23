@@ -1,4 +1,5 @@
 import mockDataVisionComponents from '@/data/mockDataVisionComponents';
+import mockDataVisions from '@/data/mockDataVisions';
 import VisionComponentsDisplay from '@/shared/VisionComponentsDisplay';
 import VisionComponentsForOneVisionDisplay from '@/shared/VisionComponentsForOneVisionDisplay';
 import { getAllRelatedVisionsIdsFromVisionsComponents } from '@/utils';
@@ -12,13 +13,19 @@ const VisionsComponentsPage = () => {
 		<div>
 			<h1>Visions Components</h1>
 			<VisionComponentsDisplay visionComponents={mockDataVisionComponents} />
+			<br />
 			<div>
-				{allRelatedVisionsIds.map((visionId) => {
+				{mockDataVisions.map((vision) => {
+					const { id: visionId } = vision;
 					return (
-						<VisionComponentsForOneVisionDisplay
-							key={visionId}
-							visionId={visionId}
-						/>
+						<div>
+							<br />
+							<VisionComponentsForOneVisionDisplay
+								key={visionId}
+								visionId={visionId}
+							/>
+							<br />
+						</div>
 					);
 				})}
 			</div>

@@ -188,3 +188,14 @@ export const getLastSegmentOfUrl = (url: string) => {
 	const segments = url.split('/');
 	return segments[segments.length - 1];
 };
+
+export const getVisionTitlesFromVisionIds = (
+	visions: Vision[],
+	visionIds: number[]
+) => {
+	const visionTitles = visionIds.map((visionId) => {
+		const vision = getItemById(visions, visionId) as Vision;
+		return vision ? vision.title : '';
+	});
+	return visionTitles;
+};
