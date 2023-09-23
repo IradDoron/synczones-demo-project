@@ -4,7 +4,7 @@ import VisionLadderDisplay from '@/shared/VisionLadderDisplay';
 const VisionsLaddersPage = () => {
 	return (
 		<div>
-			<h1>Visions Ladders Page</h1>
+			<h2>All Visions Ladders Page</h2>
 			<div>
 				{mockDataVisions.map((vision) => {
 					const { id } = vision;

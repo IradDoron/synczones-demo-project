@@ -18,7 +18,7 @@ export type Goal = {
 	relatedVisionsIds: number[];
 	title: string;
 	description: string;
-	isCompleted: boolean;
+	status: 'Completed' | 'In Progress' | 'Not Started';
 };
 
 // Define export types for CRUD operations and actions related to goals and visions

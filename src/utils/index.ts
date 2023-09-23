@@ -87,6 +87,14 @@ export const kebabCaseToTitleCase = (kebabCaseString: string) => {
 	return result.join(' ');
 };
 
+export const titleCaseToKebabCase = (titleCaseString: string) => {
+	const words = titleCaseString.split(' ');
+	const result = words.map((word) => {
+		return word.toLowerCase();
+	});
+	return result.join('-');
+};
+
 export const getAllRelatedVisionsIdsFromVisionsComponents = (
 	visionsComponents: VisionComponent[]
 ) => {
@@ -164,4 +172,19 @@ export const getVisionComponentStepsFromVisionComponentId = (
 	const { steps } = ladder;
 
 	return steps;
+};
+
+export const getVisionByVisionTitleInKebabCase = (
+	visions: Vision[],
+	visionTitleInKebabCase: string
+) => {
+	const vision = visions.find(
+		(vision) => titleCaseToKebabCase(vision.title) === visionTitleInKebabCase
+	);
+	return vision;
+};
+
+export const getLastSegmentOfUrl = (url: string) => {
+	const segments = url.split('/');
+	return segments[segments.length - 1];
 };
