@@ -24,8 +24,6 @@ const SkillsDisplay = ({ skills }: Props) => {
 
 	const skillKeys = getKeys<Skill>(skills[2]);
 
-	console.log(skillKeys);
-
 	return (
 		<div>
 			<h2>Skills Display</h2>

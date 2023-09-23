@@ -18,9 +18,7 @@ export type Goal = {
 	relatedVisionsIds: number[];
 	title: string;
 	description: string;
-	startDate: Date;
-	endDate: Date;
-	isCompleted: boolean;
+	status: 'Completed' | 'In Progress' | 'Not Started';
 };
 
 // Define export types for CRUD operations and actions related to goals and visions
@@ -98,4 +96,23 @@ export type VisionComponent = {
 	id: number;
 	title: string;
 	description: string;
+	relatedVisionsIds: number[];
+};
+
+/**
+ * The steps for achieving a vision.
+ * Each step is an array of goal ids.
+ * The first step is the final set of goals to be achieved.
+ * The last step is the initial set of goals to be achieved.
+ */
+export type VisionComponentLadder = {
+	id: number;
+	visionComponentId: number;
+	steps: VisionLadderStep[];
+};
+
+export type VisionLadderStep = {
+	title: string;
+	description: string;
+	goalIds: number[];
 };
