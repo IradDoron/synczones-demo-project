@@ -18,7 +18,7 @@ const VisionsComponentsPage = () => {
 				{mockDataVisions.map((vision) => {
 					const { id: visionId } = vision;
 					return (
-						<div>
+						<div key={visionId}>
 							<br />
 							<VisionComponentsForOneVisionDisplay
 								key={visionId}

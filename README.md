@@ -13,5 +13,5 @@ This demo project is a simple example of how the data model of SyncZones could l
 ## Links
 
 - [See the demo](https://synczones-demo.netlify.app/)
-- [See the code](https://github.com/SebastianStupp/synczones-demo)
+- [See the code](https://github.com/IradDoron/synczones-demo-project)
 
