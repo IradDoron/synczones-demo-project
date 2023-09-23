@@ -34,7 +34,7 @@ const GoalsDisplay = ({ goals }: Props) => {
 							</td>
 							<td>{goal.title}</td>
 							<td>{goal.description}</td>
-							<td>{goal.isCompleted ? 'True' : 'False'}</td>
+							<td>{goal.status}</td>
 						</tr>
 					))}
 				</tbody>
