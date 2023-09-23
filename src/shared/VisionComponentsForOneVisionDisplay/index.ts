@@ -1,0 +1,3 @@
+import VisionComponentsForOneVisionDisplay from './VisionComponentsForOneVisionDisplay';
+
+export default VisionComponentsForOneVisionDisplay;
