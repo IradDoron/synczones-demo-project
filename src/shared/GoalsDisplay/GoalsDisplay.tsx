@@ -1,3 +1,4 @@
+import { STATUS_COLORS } from '@/constants';
 import type { Goal } from '@/types';
 import Link from 'next/link';
 
@@ -39,7 +40,13 @@ const GoalsDisplay = ({ goals }: Props) => {
 								</td>
 								<td>{title}</td>
 								<td>{description}</td>
-								<td>{status}</td>
+								<td
+									style={{
+										backgroundColor: STATUS_COLORS[status],
+									}}
+								>
+									{status}
+								</td>
 								<td>
 									<Link href={`goals/${url}`}>Link</Link>
 								</td>

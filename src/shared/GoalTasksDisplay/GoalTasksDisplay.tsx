@@ -1,3 +1,4 @@
+import { STATUS_COLORS } from '@/constants';
 import mockDataGoals from '@/data/mockDataGoals';
 import mockDataTasks from '@/data/mockDataTasks';
 import { Goal } from '@/types';
@@ -26,7 +27,9 @@ const GoalTasksDisplay = ({ goalId }: Props) => {
 	return (
 		<div>
 			{tasksData.map((task, index) => {
-				const { id, title, description, relatedGoalsIds, taskSteps } = task;
+				const { id, title, description, relatedGoalsIds, taskSteps, status } =
+					task;
+
 				return (
 					<div key={id}>
 						<table>
@@ -36,6 +39,7 @@ const GoalTasksDisplay = ({ goalId }: Props) => {
 									fontSize: '1.5rem',
 									fontWeight: 'bold',
 									padding: '1rem',
+									backgroundColor: STATUS_COLORS[status],
 								}}
 							>{`${index + 1}. ${title}`}</caption>
 							<thead>
@@ -43,6 +47,7 @@ const GoalTasksDisplay = ({ goalId }: Props) => {
 									<th>ID</th>
 									<th>Description</th>
 									<th>Related Goals IDs</th>
+									<th>Status</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -50,6 +55,13 @@ const GoalTasksDisplay = ({ goalId }: Props) => {
 									<td>{id}</td>
 									<td>{description}</td>
 									<td>{getCommaSeparatedStringsFromArray(relatedGoalsIds)}</td>
+									<td
+										style={{
+											backgroundColor: STATUS_COLORS[status],
+										}}
+									>
+										{status}
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -80,7 +92,13 @@ const GoalTasksDisplay = ({ goalId }: Props) => {
 											<td>{id}</td>
 											<td>{title}</td>
 											<td>{description}</td>
-											<td>{status}</td>
+											<td
+												style={{
+													backgroundColor: STATUS_COLORS[status],
+												}}
+											>
+												{status}
+											</td>
 										</tr>
 									);
 								})}

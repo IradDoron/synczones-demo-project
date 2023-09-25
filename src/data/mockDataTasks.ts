@@ -12,7 +12,7 @@ const mockDataTasks: Task[] = [
 				id: 1,
 				title: 'Study Basic HTML Elements',
 				description: 'Read documentation and tutorials on HTML basics.',
-				status: 'Not Started',
+				status: 'In Progress',
 			},
 			{
 				id: 2,
@@ -21,7 +21,7 @@ const mockDataTasks: Task[] = [
 				status: 'Not Started',
 			},
 		],
-		status: 'Not Started',
+		status: 'In Progress',
 	},
 	{
 		id: 2,

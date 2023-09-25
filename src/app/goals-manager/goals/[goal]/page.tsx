@@ -1,5 +1,6 @@
 'use client';
 
+import { STATUS_COLORS } from '@/constants';
 import mockDataGoals from '@/data/mockDataGoals';
 import GoalProcessDisplay from '@/shared/GoalProcessDisplay';
 import GoalTasksDisplay from '@/shared/GoalTasksDisplay';
@@ -36,7 +37,11 @@ const GoalPage = () => {
 
 			<div>
 				<table>
-					<caption>
+					<caption
+						style={{
+							backgroundColor: STATUS_COLORS[status],
+						}}
+					>
 						<h2>{title}</h2>
 					</caption>
 					<thead>
@@ -56,7 +61,13 @@ const GoalPage = () => {
 							<td>{url}</td>
 							<td>{getCommaSeparatedStringsFromArray(relatedVisionsIds)}</td>
 							<td>{description}</td>
-							<td>{status}</td>
+							<td
+								style={{
+									backgroundColor: STATUS_COLORS[status],
+								}}
+							>
+								{status}
+							</td>
 						</tr>
 					</tbody>
 				</table>
