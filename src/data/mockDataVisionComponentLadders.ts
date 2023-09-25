@@ -23,7 +23,7 @@ const mockDataVisionComponentLadders: VisionComponentLadder[] = [
 			{
 				title: 'Learn Digital Design',
 				description: 'Learn digital design to design digital apps.',
-				goalIds: [],
+				goalIds: [8],
 			},
 			{
 				title: 'Learn Full Stack Tech',

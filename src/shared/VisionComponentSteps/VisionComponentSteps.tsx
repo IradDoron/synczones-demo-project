@@ -1,6 +1,7 @@
 import mockDataGoals from '@/data/mockDataGoals';
 import { VisionLadderStep } from '@/types';
 import { getCommaSeparatedStringsFromArray, getItemById } from '@/utils';
+import Link from 'next/link';
 
 type Props = {
 	steps: VisionLadderStep[];
@@ -34,9 +35,13 @@ const VisionComponentSteps = ({ steps }: Props) => {
 									}}
 								>
 									{goalIds.map((goalId) => {
+										const goal = getItemById(mockDataGoals, goalId);
+										const { url, title } = goal;
 										return (
 											<li key={goalId}>
-												{getItemById(mockDataGoals, goalId)?.title}
+												<Link href={`/goals-manager/goals/${url}`}>
+													{title}
+												</Link>
 											</li>
 										);
 									})}

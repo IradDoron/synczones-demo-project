@@ -12,6 +12,6 @@ This demo project is a simple example of how the data model of SyncZones could l
 
 ## Links
 
-- [See the demo](https://synczones-demo.netlify.app/)
+- [See the demo](https://synczones-demo-project.vercel.app/)
 - [See the code](https://github.com/IradDoron/synczones-demo-project)
 
