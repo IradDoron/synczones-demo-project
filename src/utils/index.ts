@@ -1,4 +1,5 @@
 import {
+	Goal,
 	Vision,
 	VisionComponent,
 	VisionComponentLadder,
@@ -198,4 +199,14 @@ export const getVisionTitlesFromVisionIds = (
 		return vision ? vision.title : '';
 	});
 	return visionTitles;
+};
+
+export const getGoalIdFromGoalUrl = (goals: Goal[], goalUrl: string) => {
+	const goal = goals.find((goal) => goal.url === goalUrl);
+	return goal ? goal.id : -1;
+};
+
+export const getGoalFromGoalId = (goals: Goal[], goalId: number) => {
+	const goal = goals.find((goal) => goal.id === goalId);
+	return goal;
 };
