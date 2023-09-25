@@ -32,6 +32,22 @@ const mockDataGoals: Goal[] = [
 		url: 'learn-html-well',
 		description: 'Learn HTML deeply and master it.',
 		status: 'In Progress',
+		process: {
+			sections: [
+				{
+					element: 'paragraph',
+					content: 'Learn the basics elements and syntax of HTML.',
+				},
+				{
+					element: 'paragraph',
+					content: 'Learn the most common HTML tags.',
+				},
+				{
+					element: 'paragraph',
+					content: 'Learn to connect CSS and JavaScript to HTML.',
+				},
+			],
+		},
 	},
 	{
 		id: 5,

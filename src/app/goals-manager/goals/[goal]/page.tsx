@@ -1,6 +1,7 @@
 'use client';
 
 import mockDataGoals from '@/data/mockDataGoals';
+import GoalProcessDisplay from '@/shared/GoalProcessDisplay';
 import { Goal } from '@/types';
 import {
 	getCommaSeparatedStringsFromArray,
@@ -26,13 +27,17 @@ const GoalPage = () => {
 	const { id, relatedVisionsIds, title, url, description, status } =
 		goalData as Goal;
 
+	const { process } = goalData as Goal;
+
 	return (
 		<div>
 			<h1>Goal Page</h1>
 
 			<div>
 				<table>
-					<caption>{title}</caption>
+					<caption>
+						<h2>{title}</h2>
+					</caption>
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -54,10 +59,11 @@ const GoalPage = () => {
 						</tr>
 					</tbody>
 				</table>
+				<p>What should I do to achieve this goal?</p>
+				<GoalProcessDisplay goalProcess={process} />
 			</div>
 		</div>
 	);
 };
 
 export default GoalPage;
-

@@ -10,6 +10,17 @@ export type Vision = {
 	createdAt: Date;
 };
 
+export type GoalProcessParagraph = {
+	element: 'paragraph';
+	content: string;
+};
+
+export type GoalProcess = {
+	sections: GoalProcessParagraph[];
+};
+
+export type GoalProcessElement = GoalProcessParagraph;
+
 /**
  * Represents a Goal in the Goals Manager app.
  */
@@ -20,6 +31,7 @@ export type Goal = {
 	url: string;
 	description: string;
 	status: 'Completed' | 'In Progress' | 'Not Started';
+	process?: GoalProcess;
 };
 
 // Define export types for CRUD operations and actions related to goals and visions
