@@ -17,6 +17,7 @@ export type Goal = {
 	id: number;
 	relatedVisionsIds: number[];
 	title: string;
+	url: string;
 	description: string;
 	status: 'Completed' | 'In Progress' | 'Not Started';
 };
