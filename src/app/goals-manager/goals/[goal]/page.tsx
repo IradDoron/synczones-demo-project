@@ -74,6 +74,7 @@ const GoalPage = () => {
 				<h3>What should I do to achieve this goal?</h3>
 				<GoalProcessDisplay goalProcess={process} />
 				<h3>What tasks should I do?</h3>
+				<button>Add Task</button>
 				<GoalTasksDisplay goalId={id} />
 			</div>
 		</div>

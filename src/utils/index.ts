@@ -4,7 +4,6 @@ import {
 	Vision,
 	VisionComponent,
 	VisionComponentLadder,
-	VisionLadderStep,
 } from '@/types';
 
 export const getCommaSeparatedStringsFromArray = (
