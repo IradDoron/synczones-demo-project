@@ -1,5 +1,6 @@
 import {
 	Goal,
+	Task,
 	Vision,
 	VisionComponent,
 	VisionComponentLadder,
@@ -209,4 +210,18 @@ export const getGoalIdFromGoalUrl = (goals: Goal[], goalUrl: string) => {
 export const getGoalFromGoalId = (goals: Goal[], goalId: number) => {
 	const goal = goals.find((goal) => goal.id === goalId);
 	return goal;
+};
+
+export const getAllTasksIdsFromGoalId = (goals: Goal[], goalId: number) => {
+	const goal = getGoalFromGoalId(goals, goalId);
+	if (!goal) {
+		return [] as number[];
+	}
+	const { tasks: tasksIds } = goal;
+	return tasksIds ? tasksIds : ([] as number[]);
+};
+
+export const getTasksDataFromTasksIds = (tasks: Task[], tasksIds: number[]) => {
+	const tasksData = tasks.filter((task) => tasksIds.includes(task.id));
+	return tasksData;
 };
