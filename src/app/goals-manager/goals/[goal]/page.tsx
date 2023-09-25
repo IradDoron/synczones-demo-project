@@ -2,6 +2,7 @@
 
 import mockDataGoals from '@/data/mockDataGoals';
 import GoalProcessDisplay from '@/shared/GoalProcessDisplay';
+import GoalTasksDisplay from '@/shared/GoalTasksDisplay';
 import { Goal } from '@/types';
 import {
 	getCommaSeparatedStringsFromArray,
@@ -59,8 +60,10 @@ const GoalPage = () => {
 						</tr>
 					</tbody>
 				</table>
-				<p>What should I do to achieve this goal?</p>
+				<h3>What should I do to achieve this goal?</h3>
 				<GoalProcessDisplay goalProcess={process} />
+				<h3>What tasks should I do?</h3>
+				<GoalTasksDisplay goalId={id} />
 			</div>
 		</div>
 	);

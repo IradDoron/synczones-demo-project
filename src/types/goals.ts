@@ -32,6 +32,7 @@ export type Goal = {
 	description: string;
 	status: 'Completed' | 'In Progress' | 'Not Started';
 	process?: GoalProcess;
+	tasks?: number[]; // Task ids
 };
 
 // Define export types for CRUD operations and actions related to goals and visions
@@ -128,4 +129,20 @@ export type VisionLadderStep = {
 	title: string;
 	description: string;
 	goalIds: number[];
+};
+
+export type TaskStep = {
+	id: number;
+	title: string;
+	description: string;
+	status: 'Completed' | 'In Progress' | 'Not Started';
+};
+
+export type Task = {
+	id: number;
+	title: string;
+	description: string;
+	relatedGoalsIds: number[];
+	taskSteps?: TaskStep[];
+	status: 'Completed' | 'In Progress' | 'Not Started';
 };
