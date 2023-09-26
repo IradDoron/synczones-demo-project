@@ -1,7 +1,9 @@
 'use client';
 
+import { STATUS_COLORS } from '@/constants';
 import mockDataGoals from '@/data/mockDataGoals';
 import GoalProcessDisplay from '@/shared/GoalProcessDisplay';
+import GoalTasksDisplay from '@/shared/GoalTasksDisplay';
 import { Goal } from '@/types';
 import {
 	getCommaSeparatedStringsFromArray,
@@ -35,7 +37,11 @@ const GoalPage = () => {
 
 			<div>
 				<table>
-					<caption>
+					<caption
+						style={{
+							backgroundColor: STATUS_COLORS[status],
+						}}
+					>
 						<h2>{title}</h2>
 					</caption>
 					<thead>
@@ -55,12 +61,21 @@ const GoalPage = () => {
 							<td>{url}</td>
 							<td>{getCommaSeparatedStringsFromArray(relatedVisionsIds)}</td>
 							<td>{description}</td>
-							<td>{status}</td>
+							<td
+								style={{
+									backgroundColor: STATUS_COLORS[status],
+								}}
+							>
+								{status}
+							</td>
 						</tr>
 					</tbody>
 				</table>
-				<p>What should I do to achieve this goal?</p>
+				<h3>What should I do to achieve this goal?</h3>
 				<GoalProcessDisplay goalProcess={process} />
+				<h3>What tasks should I do?</h3>
+				<button>Add Task</button>
+				<GoalTasksDisplay goalId={id} />
 			</div>
 		</div>
 	);

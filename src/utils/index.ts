@@ -1,9 +1,10 @@
 import {
 	Goal,
+	LearningResourceMark,
+	Task,
 	Vision,
 	VisionComponent,
 	VisionComponentLadder,
-	VisionLadderStep,
 } from '@/types';
 
 export const getCommaSeparatedStringsFromArray = (
@@ -209,4 +210,79 @@ export const getGoalIdFromGoalUrl = (goals: Goal[], goalUrl: string) => {
 export const getGoalFromGoalId = (goals: Goal[], goalId: number) => {
 	const goal = goals.find((goal) => goal.id === goalId);
 	return goal;
+};
+
+export const getAllTasksIdsFromGoalId = (goals: Goal[], goalId: number) => {
+	const goal = getGoalFromGoalId(goals, goalId);
+	if (!goal) {
+		return [] as number[];
+	}
+	const { tasks: tasksIds } = goal;
+	return tasksIds ? tasksIds : ([] as number[]);
+};
+
+export const getTasksDataFromTasksIds = (tasks: Task[], tasksIds: number[]) => {
+	const tasksData = tasks.filter((task) => tasksIds.includes(task.id));
+	return tasksData;
+};
+
+export const getLearningResourceCurrentMark = (mark: LearningResourceMark) => {
+	const { markType, currentMark } = mark;
+	switch (markType) {
+		case 'Page': {
+			return `Page ${currentMark}`;
+		}
+
+		case 'Time': {
+			const seconds = currentMark as number;
+			const hours = Math.floor(seconds / 3600);
+			const minutes = Math.floor((seconds - hours * 3600) / 60);
+			const secondsLeft = seconds - hours * 3600 - minutes * 60;
+			const hoursString = hours < 10 ? `0${hours}` : `${hours}`;
+			const minutesString = minutes < 10 ? `0${minutes}` : `${minutes}`;
+			const secondsString =
+				secondsLeft < 10 ? `0${secondsLeft}` : `${secondsLeft}`;
+			const fullTimeString = `${hoursString}:${minutesString}:${secondsString}`;
+			return fullTimeString;
+		}
+
+		case 'Lesson Number': {
+			return `Lesson ${currentMark}`;
+		}
+
+		case 'URL': {
+			return `URL: ${currentMark}`;
+		}
+
+		case 'Chapter': {
+			return `Chapter: ${currentMark}`;
+		}
+
+		default: {
+			return 'Unknown Mark Type';
+		}
+	}
+};
+
+export const getFormattedDate = (date: Date | null | string) => {
+	if (!date) {
+		return '';
+	}
+
+	if (typeof date === 'string') {
+		return '';
+	}
+
+	const day = date.getDate();
+	const month = date.getMonth() + 1;
+	const year = date.getFullYear();
+	const hours = date.getHours();
+	const minutes = date.getMinutes();
+	const seconds = date.getSeconds();
+	const hoursString = hours < 10 ? `0${hours}` : `${hours}`;
+	const minutesString = minutes < 10 ? `0${minutes}` : `${minutes}`;
+	const secondsString = seconds < 10 ? `0${seconds}` : `${seconds}`;
+	const timeString = `${hoursString}:${minutesString}:${secondsString}`;
+	const dateString = `${day}/${month}/${year}`;
+	return `${dateString} ${timeString}`;
 };
