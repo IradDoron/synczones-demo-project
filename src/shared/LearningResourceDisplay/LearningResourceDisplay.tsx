@@ -28,7 +28,6 @@ const LearningResourceDisplay = ({ learningResourceId }: Props) => {
 		currency,
 		type,
 		mark,
-		subLearningResources,
 		status,
 		relatedTasksIds,
 		relatedSkillsIds,

@@ -264,10 +264,15 @@ export const getLearningResourceCurrentMark = (mark: LearningResourceMark) => {
 	}
 };
 
-export const getFormattedDate = (date: Date | null) => {
+export const getFormattedDate = (date: Date | null | string) => {
 	if (!date) {
 		return '';
 	}
+
+	if (typeof date === 'string') {
+		return '';
+	}
+
 	const day = date.getDate();
 	const month = date.getMonth() + 1;
 	const year = date.getFullYear();
