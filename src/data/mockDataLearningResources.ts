@@ -26,35 +26,3 @@ const mockDataLearningResources: LearningResource[] = [
 ];
 
 export default mockDataLearningResources;
-
-// export type LearningResource = {
-// 	id: number;
-// 	title: string;
-// 	description: string;
-// 	resourceURL: string;
-// 	author: string;
-// 	platform: string;
-// 	platformURL: string;
-// 	cost: number;
-// 	currency: 'USD' | 'EUR' | 'ILS';
-// 	type:
-// 		| 'Course'
-// 		| 'Module'
-// 		| 'Book'
-// 		| 'Video'
-// 		| 'Article'
-// 		| 'Podcast'
-// 		| 'Private Lesson'
-// 		| 'Technology'
-// 		| 'Other';
-// 	mark: {
-// 		markType: 'Page' | 'Time' | 'Lesson Number' | 'URL';
-// 		currentMark: number | Date | string;
-// 		totalMark: number | Date | string;
-// 		lastTimeMarked: Date;
-// 	};
-// 	subLearningResources?: LearningResource[];
-// 	status: 'Not Started' | 'In Progress' | 'Completed';
-// 	relatedTasksIds: number[];
-// 	relatedSkillsIds?: number[];
-// };
