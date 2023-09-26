@@ -1,3 +1,11 @@
+export type LearningResourceMark = {
+	markType: 'Page' | 'Time' | 'Lesson Number' | 'URL' | 'Chapter' | 'Unkown';
+
+	currentMark: number | string | null;
+	totalMark: number | string | null;
+	lastTimeMarked: Date | null | string;
+};
+
 export type LearningResource = {
 	id: number;
 	title: string;
@@ -18,13 +26,8 @@ export type LearningResource = {
 		| 'Private Lesson'
 		| 'Technology'
 		| 'Other';
-	mark: {
-		markType: 'Page' | 'Time' | 'Lesson Number' | 'URL' | null;
-		currentMark: number | Date | string | null;
-		totalMark: number | Date | string | null;
-		lastTimeMarked: Date | null;
-	};
-	subLearningResources?: LearningResource[];
+	mark: LearningResourceMark;
+	subLearningResources?: number[];
 	status: 'Not Started' | 'In Progress' | 'Completed';
 	relatedTasksIds?: number[];
 	relatedSkillsIds?: number[];
