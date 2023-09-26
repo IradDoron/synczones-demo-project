@@ -32,5 +32,4 @@ export type UserGoalsManagerStore = {
  */
 export type UserLearningManagerStore = {
 	learningEnvironments: LearningEnvironment[];
-	learningProcesses: LearningProcess[];
 };

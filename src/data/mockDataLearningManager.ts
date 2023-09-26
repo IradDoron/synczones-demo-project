@@ -35,15 +35,6 @@ const mockDataLearningManager: UserLearningManagerStore = {
 			],
 		},
 	],
-	learningProcesses: [
-		{
-			id: 1,
-			title: 'Digital Design',
-			description: 'Learning in depth digital design',
-			learningEnvironmentsIds: [1],
-			isOrdeded: true,
-		},
-	],
 };
 
 export default mockDataLearningManager;
