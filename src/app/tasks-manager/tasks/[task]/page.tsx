@@ -2,11 +2,14 @@
 
 import mockDataTasks from '@/data/mockDataTasks';
 import TaskDisplay from '@/shared/TaskDisplay';
-import { getTaskFromTaskUrl } from '@/utils';
+import { getHebrewUrlStringFromHebrewUrl, getTaskFromTaskUrl } from '@/utils';
 import { useParams } from 'next/navigation';
 
 const TaskPage = () => {
-	const { task } = useParams() as { task: string };
+	let { task } = useParams() as { task: string };
+	if (task.includes('%')) {
+		task = getHebrewUrlStringFromHebrewUrl(task);
+	}
 	const taskData = getTaskFromTaskUrl(mockDataTasks, task);
 
 	if (!taskData) {

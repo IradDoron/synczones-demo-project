@@ -230,8 +230,8 @@ export type WorkSession = {
 	id: number;
 	taskId: number;
 	startTime: Date;
-	endTime: Date;
-	duration: number;
+	endTime: Date | null;
+	duration: number | null;
 	mood?: 'Very Happy' | 'Happy' | 'Neutral' | 'Unhappy' | 'Very Unhappy';
 	productivityRating?: 'Very Low' | 'Low' | 'Medium' | 'High' | 'Very High';
 	notes?: string;
@@ -262,7 +262,7 @@ export type WorkSession = {
  * @property {number} [estimatedHours] - Estimated hours required to complete the task.
  * @property {TaskPriority} [priority] - Priority of the task.
  * @property {string} [notes] - Additional notes or comments for the task.
- * @property {`${0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100}`} [progress] - Progress of the task as a percentage (0 to 100).
+ * @property {0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100} [progress] - Progress of the task.
  * @property {WorkSession[]} [workSessions] - Work session entries associated with the task.
  *   Each entry represents a period of work on the task.
  */
@@ -288,6 +288,6 @@ export type Task = {
 	estimatedHours?: number;
 	priority?: TaskPriority;
 	notes?: string;
-	progress?: `${0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100}`;
+	progress?: 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
 	workSessions?: WorkSession[];
 };
