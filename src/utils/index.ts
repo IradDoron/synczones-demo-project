@@ -286,3 +286,8 @@ export const getFormattedDate = (date: Date | null | string) => {
 	const dateString = `${day}/${month}/${year}`;
 	return `${dateString} ${timeString}`;
 };
+
+export const getTaskFromTaskUrl = (tasks: Task[], taskUrl: string) => {
+	const task = tasks.find((task) => task.url === taskUrl);
+	return task;
+};
