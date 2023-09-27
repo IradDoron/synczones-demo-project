@@ -250,7 +250,7 @@ export type WorkSession = {
  * @property {('Completed' | 'In Progress' | 'Not Started')} status - Status of the task.
  * @property {number} [learningResourceId] - Identifier for the associated learning resource.
  * @property {number[]} [relatedGoalsIds] - IDs of related goals for this task.
- * @property {Task[]} [subTasks] - Sub-tasks associated with this task.
+ * @property {number[]} [subTasksIds] - Sub-tasks IDs associated with this task.
  * @property {string[]} [attachments] - List of attachments (e.g., file paths or URLs).
  * @property {string[]} [labels] - Labels or tags associated with the task.
  * @property {Date} [createDate] - Date when the task was created.
@@ -276,7 +276,7 @@ export type Task = {
 	status: 'Completed' | 'In Progress' | 'Not Started';
 	learningResourceId?: number;
 	relatedGoalsIds?: number[];
-	subTasks?: Task[];
+	subTasksIds?: number[];
 	attachments?: string[];
 	labels?: string[];
 	createDate?: Date;

@@ -1,71 +1,57 @@
 import { STATUS_COLORS } from '@/constants';
 import { Task } from '@/types';
+import TaskDateAndTimeDisplay from './TaskDateAndTimeDisplay';
+import TaskDependenciesDisplay from './TaskDependenciesDisplay';
+import TaskMetaInfoDisplay from './TaskMetaInfoDisplay';
+import TaskRecurrenceDisplay from './TaskRecurrenceDisplay';
+import TaskStepsDisplay from './TaskStepsDisplay';
+import TaskSubTasksDisplay from './TaskSubTasksDisplay';
+import TaskWorkSessionsDisplay from './TaskWorkSessionsDisplay';
 
 type Props = {
 	task: Task;
 };
 
 const TaskDisplay = ({ task }: Props) => {
-	const { id, title, taskType, description, taskSteps, status } = task;
+	const { id, title, description, status, attachments, notes } = task;
 	return (
 		<div>
-			<h2>General Task Display</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Title</th>
-						<th>Type</th>
-						<th>Description</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>{id}</td>
-						<td>{title}</td>
-						<td>{taskType}</td>
-						<td>{description}</td>
-						<td
-							style={{
-								backgroundColor: STATUS_COLORS[status],
-							}}
-						>
-							{status}
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<h2>Task Steps</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>Title</th>
-						<th>Description</th>
-						<th>Status</th>
-					</tr>
-				</thead>
-				<tbody>
-					{taskSteps?.map((taskStep) => {
-						const { id, title, description, status } = taskStep;
-						return (
-							<tr key={id}>
-								<td>{id}</td>
-								<td>{title}</td>
-								<td>{description}</td>
-								<td
-									style={{
-										backgroundColor: STATUS_COLORS[status],
-									}}
-								>
-									{status}
-								</td>
-							</tr>
-						);
+			<h1>
+				<span>{title}</span> - <span>(ID: {id})</span> -{' '}
+				<span
+					style={{
+						backgroundColor: STATUS_COLORS[status],
+						padding: '0.5rem',
+					}}
+				>
+					{status}
+				</span>
+			</h1>
+			<p
+				style={{
+					fontSize: '1.5rem',
+				}}
+			>
+				{description}
+			</p>
+			<TaskMetaInfoDisplay task={task} />
+			<TaskDateAndTimeDisplay task={task} />
+
+			<h2>Notes</h2>
+			<p>{notes}</p>
+			<TaskDependenciesDisplay task={task} />
+			<h2>Attachments</h2>
+			{attachments && (
+				<ul>
+					{attachments?.map((attachment) => {
+						return <li key={attachment}>{attachment}</li>;
 					})}
-				</tbody>
-			</table>
+				</ul>
+			)}
+			<TaskStepsDisplay task={task} />
+			<TaskSubTasksDisplay task={task} />
+			<TaskRecurrenceDisplay task={task} />
+			<TaskWorkSessionsDisplay task={task} />
 		</div>
 	);
 };
