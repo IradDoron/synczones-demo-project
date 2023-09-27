@@ -1,33 +1,71 @@
-import GeneralTaskDisplay from '@/shared/TaskDisplay/GeneralTaskDisplay';
-import GoalTaskDisplay from '@/shared/TaskDisplay/GoalTaskDisplay';
-import LearningResourceTaskDisplay from '@/shared/TaskDisplay/LearningResourceTaskDisplay';
-import { GeneralTask, GoalTask, LearningResourceTask, Task } from '@/types';
+import { STATUS_COLORS } from '@/constants';
+import { Task } from '@/types';
 
 type Props = {
 	task: Task;
 };
 
 const TaskDisplay = ({ task }: Props) => {
-	const { taskType } = task;
+	const { id, title, taskType, description, taskSteps, status } = task;
 	return (
 		<div>
-			<h1>Task Display</h1>
-			{(() => {
-				switch (taskType) {
-					case 'General': {
-						const generalTask = task as GeneralTask;
-						return <GeneralTaskDisplay task={generalTask} />;
-					}
-					case 'Goal': {
-						const goalTask = task as GoalTask;
-						return <GoalTaskDisplay task={goalTask} />;
-					}
-					case 'Learning Resource': {
-						const learningResourceTask = task as LearningResourceTask;
-						return <LearningResourceTaskDisplay task={learningResourceTask} />;
-					}
-				}
-			})()}
+			<h2>General Task Display</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Type</th>
+						<th>Description</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{id}</td>
+						<td>{title}</td>
+						<td>{taskType}</td>
+						<td>{description}</td>
+						<td
+							style={{
+								backgroundColor: STATUS_COLORS[status],
+							}}
+						>
+							{status}
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<h2>Task Steps</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Title</th>
+						<th>Description</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					{taskSteps?.map((taskStep) => {
+						const { id, title, description, status } = taskStep;
+						return (
+							<tr key={id}>
+								<td>{id}</td>
+								<td>{title}</td>
+								<td>{description}</td>
+								<td
+									style={{
+										backgroundColor: STATUS_COLORS[status],
+									}}
+								>
+									{status}
+								</td>
+							</tr>
+						);
+					})}
+				</tbody>
+			</table>
 		</div>
 	);
 };
