@@ -291,3 +291,58 @@ export const getTaskFromTaskUrl = (tasks: Task[], taskUrl: string) => {
 	const task = tasks.find((task) => task.url === taskUrl);
 	return task;
 };
+
+export const getHebrewUrlStringFromHebrewUrl = (hebrewUrl: string) => {
+	// example of hebrewUrl: %D7%9C%D7%A9%D7%9C%D7%95%D7%97-%D7%9C%D7%A9%D7%97%D7%A8-%D7%90%D7%AA-%D7%94%D7%94%D7%A7%D7%9C%D7%98%D7%95%D7%AA--23
+	// example of exepted result: לשלוח-לשחר-את-ההקלטות--23
+
+	const hebrewToAsciiMap: { [key: string]: string } = {
+		א: '%D7%90',
+		ב: '%D7%91',
+		ג: '%D7%92',
+		ד: '%D7%93',
+		ה: '%D7%94',
+		ו: '%D7%95',
+		ז: '%D7%96',
+		ח: '%D7%97',
+		ט: '%D7%98',
+		י: '%D7%99',
+		כ: '%D7%9B',
+		ל: '%D7%9C',
+		מ: '%D7%9E',
+		נ: '%D7%A0',
+		ס: '%D7%A1',
+		ע: '%D7%A2',
+		פ: '%D7%A4',
+		צ: '%D7%A6',
+		ק: '%D7%A7',
+		ר: '%D7%A8',
+		ש: '%D7%A9',
+		ת: '%D7%AA',
+		ם: '%D7%9D',
+		ן: '%D7%9F',
+		ף: '%D7%A3',
+		ץ: '%D7%A5',
+	};
+
+	const getKeyByValue = (object: any, value: any) => {
+		return Object.keys(object).find((key) => object[key] === value);
+	};
+
+	let result = '';
+	let currentIndex = 0;
+
+	while (currentIndex < hebrewUrl.length) {
+		if (hebrewUrl[currentIndex] === '%') {
+			const hebrewLetter = hebrewUrl.slice(currentIndex, currentIndex + 6); // example: %D7%9C
+			const asciiLetter = getKeyByValue(hebrewToAsciiMap, hebrewLetter); // example: ל
+			result += asciiLetter;
+			currentIndex += 6;
+		} else {
+			result += hebrewUrl[currentIndex];
+			currentIndex += 1;
+		}
+	}
+
+	return result;
+};

@@ -558,6 +558,39 @@ const mockDataTasks: Task[] = [
 			},
 		],
 	},
+	{
+		id: 23,
+		title: 'לשלוח לשחר את ההקלטות',
+		url: 'לשלוח-לשחר-את-ההקלטות--23',
+		taskType: 'General',
+		description: 'לשלוח לשחר את ההקלטות המלאות איפה שרואים את הפנים.',
+		status: 'In Progress',
+		priority: 'Highest',
+		progress: 0,
+		labels: ['Video Editing'],
+		createDate: new Date(
+			'Wed Sep 27 2023 14:37:24 GMT+0300 (Israel Daylight Time)'
+		),
+		startDate: new Date(
+			'Wed Sep 27 2023 14:37:24 GMT+0300 (Israel Daylight Time)'
+		),
+		dueDate: new Date(
+			'Wed Sep 27 2023 21:00:00 GMT+0300 (Israel Daylight Time)'
+		),
+		estimatedHours: 3,
+		notes: 'לא לשכוח להוסיף את האודיו המתאים',
+		workSessions: [
+			{
+				id: 1,
+				taskId: 23,
+				startTime: new Date(
+					'Wed Sep 27 2023 14:37:24 GMT+0300 (Israel Daylight Time)'
+				),
+				endTime: null,
+				duration: null,
+			},
+		],
+	},
 ];
 
 export default mockDataTasks;

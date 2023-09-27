@@ -9,7 +9,10 @@ type Props = {
  * @param {number} durationInSeconds - The duration in seconds to be formatted.
  * @returns {string} - The formatted time duration.
  */
-function formatTimeDuration(durationInSeconds: number): string {
+function formatTimeDuration(durationInSeconds: number | null): string {
+	if (!durationInSeconds) {
+		return '';
+	}
 	const hours: number = Math.floor(durationInSeconds / 3600);
 	const minutes: number = Math.floor((durationInSeconds % 3600) / 60);
 	const seconds: number = durationInSeconds % 60;
@@ -21,6 +24,9 @@ function formatTimeDuration(durationInSeconds: number): string {
 
 const getTotalWorkTimeOfWorkkSession = (workSession: WorkSession) => {
 	const { duration, breaks } = workSession;
+	if (!duration) {
+		return '';
+	}
 	let totalWorkTime = duration;
 	if (breaks && breaks.length > 0) {
 		breaks.forEach((breakItem) => {
@@ -40,24 +46,6 @@ const getTotalBreakTimeOfWorkSession = (workSession: WorkSession) => {
 	}
 	return totalBreakTime;
 };
-
-// id: number;
-// taskId: number;
-// startTime: Date;
-// endTime: Date;
-// duration: number;
-// mood?: "Very Happy" | "Happy" | "Neutral" | "Unhappy" | "Very Unhappy" | undefined;
-// productivityRating?: "Very Low" | "Low" | "Medium" | "High" | "Very High" | undefined;
-// notes?: string | undefined;
-// breaks?: Break[] | undefined;
-
-// export type Break = {
-// 	startTime: Date;
-// 	endTime: Date;
-// 	duration: number;
-// 	reason?: string;
-// 	activity?: string;
-// };
 
 const TaskWorkSessionsDisplay = ({ task }: Props) => {
 	const { workSessions } = task;
@@ -98,7 +86,7 @@ const TaskWorkSessionsDisplay = ({ task }: Props) => {
 										<td>{id}</td>
 										<td>{taskId}</td>
 										<td>{startTime.toString()}</td>
-										<td>{endTime.toString()}</td>
+										<td>{endTime?.toString()}</td>
 										<td>{formatTimeDuration(duration)}</td>
 										<td>{mood}</td>
 										<td>{productivityRating}</td>
