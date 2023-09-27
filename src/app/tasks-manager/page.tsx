@@ -1,3 +1,5 @@
+import TasksDisplay from '@/shared/TasksDisplay';
+
 const TasksManagerPage = () => {
 	return (
 		<div>
