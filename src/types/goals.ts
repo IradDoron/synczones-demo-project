@@ -138,11 +138,23 @@ export type TaskStep = {
 	status: 'Completed' | 'In Progress' | 'Not Started';
 };
 
-export type Task = {
+export type GeneralTask = {
 	id: number;
 	title: string;
+	url: string;
+	taskType: 'General' | 'Learning Resource' | 'Goal';
 	description: string;
-	relatedGoalsIds: number[];
 	taskSteps?: TaskStep[];
 	status: 'Completed' | 'In Progress' | 'Not Started';
 };
+
+export type LearningResourceTask = GeneralTask & {
+	learningResourceId: number;
+	relatedGoalsIds: number[];
+};
+
+export type GoalTask = GeneralTask & {
+	relatedGoalsIds: number[];
+};
+
+export type Task = GeneralTask | LearningResourceTask | GoalTask;

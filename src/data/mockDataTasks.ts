@@ -4,6 +4,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 1,
 		title: 'Learn HTML Fundamentals',
+		url: 'learn-html-fundamentals--1',
+		taskType: 'Goal',
 		description:
 			'Study and understand the basic HTML elements, including headings, paragraphs, links, and lists.',
 		relatedGoalsIds: [4],
@@ -26,6 +28,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 2,
 		title: 'Master HTML Forms',
+		url: 'master-html-forms--2',
+		taskType: 'Goal',
 		description:
 			'Explore HTML form elements like text inputs, radio buttons, and checkboxes.',
 		relatedGoalsIds: [4],
@@ -49,6 +53,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 3,
 		title: 'Understand HTML Semantics',
+		url: 'understand-html-semantics--3',
+		taskType: 'Goal',
 		description:
 			'Learn semantic HTML elements (e.g., <header>, <nav>) and their significance.',
 		relatedGoalsIds: [4],
@@ -72,6 +78,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 4,
 		title: 'Master HTML Tables',
+		url: 'master-html-tables--4',
+		taskType: 'Goal',
 		description: 'Learn how to create and format tables using HTML.',
 		relatedGoalsIds: [4],
 		taskSteps: [
@@ -93,6 +101,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 5,
 		title: 'Learn HTML Media Elements',
+		url: 'learn-html-media-elements--5',
+		taskType: 'Goal',
 		description:
 			'Explore HTML media elements like <img> and <video> for multimedia content.',
 		relatedGoalsIds: [4],
@@ -115,6 +125,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 6,
 		title: 'Implement HTML5 Features',
+		url: 'implement-html5-features--6',
+		taskType: 'Goal',
 		description:
 			'Learn and use HTML5 features like geolocation and local storage.',
 		relatedGoalsIds: [4],
@@ -143,6 +155,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 7,
 		title: 'Optimize for SEO',
+		url: 'optimize-for-seo--7',
+		taskType: 'Goal',
 		description:
 			'Learn how to use HTML elements to optimize webpages for search engines.',
 		relatedGoalsIds: [4],
@@ -165,6 +179,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 8,
 		title: 'Practice HTML Accessibility',
+		url: 'practice-html-accessibility--8',
+		taskType: 'Goal',
 		description:
 			'Learn how to create web content that is accessible to all users.',
 		relatedGoalsIds: [4],
@@ -188,6 +204,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 9,
 		title: 'HTML Validation',
+		url: 'html-validation--9',
+		taskType: 'Goal',
 		description: 'Learn how to validate HTML code for standards compliance.',
 		relatedGoalsIds: [4],
 		taskSteps: [
@@ -209,6 +227,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 10,
 		title: 'Build Responsive Webpages',
+		url: 'build-responsive-webpages--10',
+		taskType: 'Goal',
 		description:
 			'Learn how to create webpages that adapt to different screen sizes.',
 		relatedGoalsIds: [4],
@@ -233,6 +253,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 11,
 		title: 'Advanced HTML Forms',
+		url: 'advanced-html-forms--11',
+		taskType: 'Goal',
 		description:
 			'Explore advanced HTML form features, such as form validation and custom styling.',
 		relatedGoalsIds: [4],
@@ -257,6 +279,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 12,
 		title: 'HTML Email Markup',
+		url: 'html-email-markup--12',
+		taskType: 'Goal',
 		description:
 			'Learn how to create responsive and well-structured HTML emails.',
 		relatedGoalsIds: [4],
@@ -280,6 +304,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 13,
 		title: 'HTML and CSS Frameworks',
+		url: 'html-and-css-frameworks--13',
+		taskType: 'Goal',
 		description:
 			'Explore popular HTML and CSS frameworks like Bootstrap and Foundation.',
 		relatedGoalsIds: [4],
@@ -309,6 +335,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 14,
 		title: 'HTML5 Canvas and Graphics',
+		url: 'html5-canvas-and-graphics--14',
+		taskType: 'Goal',
 		description:
 			'Learn how to use HTML5 Canvas for dynamic graphics and animations.',
 		relatedGoalsIds: [4],
@@ -332,6 +360,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 15,
 		title: 'Web Performance Optimization',
+		url: 'web-performance-optimization--15',
+		taskType: 'Goal',
 		description:
 			'Learn techniques to optimize the performance of web pages built with HTML.',
 		relatedGoalsIds: [4],
@@ -363,6 +393,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 16,
 		title: 'Web Accessibility Testing',
+		url: 'web-accessibility-testing--16',
+		taskType: 'Goal',
 		description:
 			'Learn how to test and ensure web accessibility compliance in HTML code.',
 		relatedGoalsIds: [4],
@@ -386,6 +418,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 17,
 		title: 'HTML and SEO Optimization',
+		url: 'html-and-seo-optimization--17',
+		taskType: 'Goal',
 		description:
 			'Implement HTML practices to improve search engine optimization (SEO).',
 		relatedGoalsIds: [4],
@@ -410,6 +444,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 18,
 		title: 'Version Control with HTML',
+		url: 'version-control-with-html--18',
+		taskType: 'Goal',
 		description:
 			'Learn version control concepts and apply them to HTML projects.',
 		relatedGoalsIds: [4],
@@ -438,6 +474,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 19,
 		title: 'Cross-Browser Compatibility',
+		url: 'cross-browser-compatibility--19',
+		taskType: 'Goal',
 		description:
 			'Test and ensure your HTML code works correctly on different web browsers.',
 		relatedGoalsIds: [4],
@@ -461,6 +499,8 @@ const mockDataTasks: Task[] = [
 	{
 		id: 20,
 		title: 'HTML Best Practices Review',
+		url: 'html-best-practices-review--20',
+		taskType: 'Goal',
 		description:
 			'Review and consolidate your knowledge of HTML best practices.',
 		relatedGoalsIds: [4],
@@ -479,6 +519,44 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'Not Started',
+	},
+	{
+		id: 21,
+		title: 'Learn the Next.js course',
+		url: 'learn-the-nextjs-course--21',
+		taskType: 'Learning Resource',
+		description: 'Complete the Next.js course.',
+		learningResourceId: 1,
+		relatedGoalsIds: [3],
+		status: 'In Progress',
+	},
+	{
+		id: 22,
+		title: 'Pay Bituah to the car',
+		url: 'pay-bituah-to-the-car--22',
+		taskType: 'General',
+		description: 'Pay Bituah to the car.',
+		status: 'Not Started',
+		taskSteps: [
+			{
+				id: 1,
+				title: 'Call',
+				description: 'Find the phone number and call them.',
+				status: 'Not Started',
+			},
+			{
+				id: 2,
+				title: 'Pay',
+				description: 'Pay them.',
+				status: 'Not Started',
+			},
+			{
+				id: 3,
+				title: 'Save document',
+				description: 'Save the document in google drive.',
+				status: 'Not Started',
+			},
+		],
 	},
 ];
 

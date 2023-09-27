@@ -24,6 +24,19 @@ const mockDataGoals: Goal[] = [
 		url: 'learn-nextjs-well',
 		description: 'Learn Next.js deeply and master it.',
 		status: 'Not Started',
+		process: {
+			sections: [
+				{
+					element: 'paragraph',
+					content: 'Learn courses and learning resources for Next.js.',
+				},
+				{
+					element: 'paragraph',
+					content: 'Practice building projects with Next.js.',
+				},
+			],
+		},
+		tasks: [21],
 	},
 	{
 		id: 4,

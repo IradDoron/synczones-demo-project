@@ -1,6 +1,8 @@
 import {
 	Goal,
+	GoalTask,
 	LearningResourceMark,
+	LearningResourceTask,
 	Task,
 	Vision,
 	VisionComponent,
@@ -285,4 +287,26 @@ export const getFormattedDate = (date: Date | null | string) => {
 	const timeString = `${hoursString}:${minutesString}:${secondsString}`;
 	const dateString = `${day}/${month}/${year}`;
 	return `${dateString} ${timeString}`;
+};
+
+export const getGeneralTasks = (tasks: Task[]) => {
+	const generalTasks = tasks.filter((task) => task.taskType === 'General');
+	return generalTasks as GoalTask[];
+};
+
+export const getGoalTasks = (tasks: Task[]) => {
+	const goalTasks = tasks.filter((task) => task.taskType === 'Goal');
+	return goalTasks as GoalTask[];
+};
+
+export const getLearningResourceTasks = (tasks: Task[]) => {
+	const learningTasks = tasks.filter(
+		(task) => task.taskType === 'Learning Resource'
+	);
+	return learningTasks as LearningResourceTask[];
+};
+
+export const getTaskFromTaskUrl = (tasks: Task[], taskUrl: string) => {
+	const task = tasks.find((task) => task.url === taskUrl);
+	return task;
 };
