@@ -333,7 +333,6 @@ export const getHebrewUrlStringFromHebrewUrl = (hebrewUrl: string) => {
 	let currentIndex = 0;
 
 	while (currentIndex < hebrewUrl.length) {
-		console.log('currentIndex', currentIndex);
 		if (hebrewUrl[currentIndex] === '%') {
 			const hebrewLetter = hebrewUrl.slice(currentIndex, currentIndex + 6); // example: %D7%9C
 			const asciiLetter = getKeyByValue(hebrewToAsciiMap, hebrewLetter); // example: ל
