@@ -80,8 +80,12 @@ const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
 		}
 		let url = '';
 		const titleWords = title.split(' ');
-		titleWords.forEach((word) => {
-			url += word.toLowerCase();
+		titleWords.forEach((word, index) => {
+			if (index === 0) {
+				url += word.toLowerCase();
+				return;
+			}
+			url += `-${word.toLowerCase()}`;
 		});
 		url += `--${formData.id}`;
 		const newFormData = {
