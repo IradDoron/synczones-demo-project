@@ -84,8 +84,6 @@ const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
 			url += word.toLowerCase();
 		});
 		url += `--${formData.id}`;
-		console.log('url', url);
-
 		const newFormData = {
 			...formData,
 			url,
