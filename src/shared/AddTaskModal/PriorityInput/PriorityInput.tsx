@@ -22,7 +22,7 @@ const PriorityInput = ({ formData, setFormData }: Props) => {
 				<summary>Priority</summary>
 				<select
 					name='priority'
-					value={formData.priority}
+					value={formData.priority || 'Moderate'}
 					onChange={handlePriorityChange}
 				>
 					<option value='Lowest'>Lowest</option>
@@ -41,5 +41,3 @@ const PriorityInput = ({ formData, setFormData }: Props) => {
 };
 
 export default PriorityInput;
-
-// "Highest" | "Very High" | "High" | "Moderate High" | "Moderate" | "Moderate Low" | "Low" | "Very Low" | "Lowest"
