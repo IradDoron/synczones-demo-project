@@ -2,6 +2,7 @@
 
 import mockDataTasks from '@/data/mockDataTasks';
 import { Task, TaskStep } from '@/types';
+import { getItemById } from '@/utils';
 import { useEffect, useState } from 'react';
 import AttachmentsInput from './AttachmentsInput';
 import DependenciesInput from './DependenciesInput';
@@ -26,50 +27,47 @@ import WorkSessionsInput from './WorkSessionsInput';
 type Props = {
 	isOpen: boolean;
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	taskId?: number;
 };
 
-const AddTaskModal = ({ isOpen, setIsOpen }: Props) => {
-	const [formData, setFormData] = useState<Task>({
-		id: mockDataTasks.length + 1,
-		title: '',
-		url: '',
-		taskType: 'General',
-		description: '',
-		taskSteps: [],
-		status: 'Not Started',
-		learningResourceId: 0,
-		relatedGoalsIds: [],
-		subTasksIds: [],
-		attachments: [],
-		labels: [],
-		createDate: `new Date(${new Date()}) `,
-		startDate: `new Date(${new Date()}) `,
-		completedDate: null,
-		dueDate: null,
-		recurrence: { type: 'none' },
-		dependencies: [],
-		estimatedHours: 0,
-		priority: 'Moderate',
-		notes: '',
-		progress: 0,
-		workSessions: [],
-	});
+const initNewTask = {
+	id: mockDataTasks.length + 1,
+	title: '',
+	url: '',
+	taskType: 'General',
+	description: '',
+	taskSteps: [],
+	status: 'Not Started',
+	learningResourceId: 0,
+	relatedGoalsIds: [],
+	subTasksIds: [],
+	attachments: [],
+	labels: [],
+	createDate: `new Date(${new Date()}) `,
+	startDate: `new Date(${new Date()}) `,
+	completedDate: null,
+	dueDate: null,
+	recurrence: { type: 'none' },
+	dependencies: [],
+	estimatedHours: 0,
+	priority: 'Moderate',
+	notes: '',
+	progress: 0,
+	workSessions: [],
+} as Task;
+
+const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
+	const [formData, setFormData] = useState<Task>(
+		taskId ? (getItemById(mockDataTasks, taskId) as Task) : initNewTask
+	);
 
 	useEffect(() => {
-		const title = formData.title;
-		if (title === '') {
-			setFormData({
-				...formData,
-				url: '',
-			});
-			return;
+		if (taskId) {
+			setFormData(getItemById(mockDataTasks, taskId) as Task);
+		} else {
+			setFormData(initNewTask);
 		}
-		let url = `${title.toLowerCase().replace(/\s/g, '-')}--${formData.id}`;
-		setFormData({
-			...formData,
-			url,
-		});
-	}, [formData.title]);
+	}, [taskId]);
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();

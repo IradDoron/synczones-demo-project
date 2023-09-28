@@ -1,5 +1,6 @@
 import { STATUS_COLORS } from '@/constants';
 import { Task } from '@/types';
+import TaskActionsDisplay from './TaskActionsDisplay';
 import TaskDateAndTimeDisplay from './TaskDateAndTimeDisplay';
 import TaskDependenciesDisplay from './TaskDependenciesDisplay';
 import TaskMetaInfoDisplay from './TaskMetaInfoDisplay';
@@ -52,6 +53,7 @@ const TaskDisplay = ({ task }: Props) => {
 			<TaskSubTasksDisplay task={task} />
 			<TaskRecurrenceDisplay task={task} />
 			<TaskWorkSessionsDisplay task={task} />
+			<TaskActionsDisplay taskId={id} />
 		</div>
 	);
 };
