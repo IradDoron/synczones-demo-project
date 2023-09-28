@@ -355,7 +355,7 @@ const WorkSessionsInput = ({ formData, setFormData }: Props) => {
 						breaks,
 					} = session;
 					return (
-						<div>
+						<div key={index}>
 							<p>Work Session {index + 1}</p>
 							<table>
 								<thead>
