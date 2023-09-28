@@ -1,7 +1,7 @@
 'use client';
 
 import mockDataTasks from '@/data/mockDataTasks';
-import { Task, TaskStep } from '@/types';
+import { Task } from '@/types';
 import { getItemById } from '@/utils';
 import { useEffect, useState } from 'react';
 import AttachmentsInput from './AttachmentsInput';
@@ -69,12 +69,39 @@ const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
 		}
 	}, [taskId]);
 
+	useEffect(() => {
+		const { title } = formData;
+		if (title === '') {
+			setFormData({
+				...formData,
+				url: '',
+			});
+			return;
+		}
+		let url = '';
+		const titleWords = title.split(' ');
+		titleWords.forEach((word) => {
+			url += word.toLowerCase();
+		});
+		url += `--${formData.id}`;
+		console.log('url', url);
+
+		const newFormData = {
+			...formData,
+			url,
+		};
+
+		setFormData(newFormData);
+	}, [formData.title]);
+
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 	};
 
 	const handleChange = (
-		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+		event: React.ChangeEvent<
+			HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+		>
 	) => {
 		const { name, value } = event.target;
 		setFormData({
@@ -165,7 +192,7 @@ const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
 						fontSize: '1.25rem',
 					}}
 				>
-					{JSON.stringify(formData, null, 2)}
+					{formatFormData()}
 				</pre>
 				<button onClick={handleCopyToClipboard}>Copy to Clipboard</button>
 				<button

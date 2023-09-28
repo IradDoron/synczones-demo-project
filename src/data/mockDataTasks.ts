@@ -645,6 +645,56 @@ const mockDataTasks: Task[] = [
 		progress: 0,
 		workSessions: [],
 	},
+	{
+		id: 25,
+		title: 'לגלגל כביסה',
+		url: '',
+		taskType: 'General',
+		description: 'לקפל את הכביסה לתוך הארון',
+		taskSteps: [
+			{
+				id: 1,
+				title: 'לאסוף',
+				description: 'לאסוף את הבגדים',
+				status: 'Not Started',
+			},
+			{
+				id: 2,
+				title: 'לקפל',
+				description: 'לקפל את הבגדים',
+				status: 'Not Started',
+			},
+			{
+				id: 3,
+				title: 'למיין',
+				description: 'למיין את הבגדים לארון',
+				status: 'Not Started',
+			},
+		],
+		status: 'Not Started',
+		learningResourceId: 0,
+		relatedGoalsIds: [],
+		subTasksIds: [],
+		attachments: [],
+		labels: [],
+		createDate: new Date(
+			'Thu Sep 28 2023 16:52:08 GMT+0300 (Israel Daylight Time)'
+		),
+		startDate: new Date(
+			'Thu Sep 28 2023 16:52:08 GMT+0300 (Israel Daylight Time)'
+		),
+		completedDate: null,
+		dueDate: null,
+		recurrence: {
+			type: 'none',
+		},
+		dependencies: [],
+		estimatedHours: 0,
+		priority: 'High',
+		notes: '',
+		progress: 0,
+		workSessions: [],
+	},
 ];
 
 export default mockDataTasks;
