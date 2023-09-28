@@ -749,6 +749,33 @@ const mockDataTasks: Task[] = [
 		progress: 0,
 		workSessions: [],
 	},
+	{
+		id: 28,
+		title: 'להסיע את אביב לתחנה',
+		url: 'להסיע-את-אביב-לתחנה--28',
+		taskType: 'General',
+		description: 'להסיע את אביב לתחנה בפתח תקווה',
+		taskSteps: [],
+		status: 'Not Started',
+		learningResourceId: 0,
+		relatedGoalsIds: [],
+		subTasksIds: [],
+		attachments: [],
+		labels: [],
+		createDate: '2023-09-28T19:33:09.723Z',
+		startDate: null,
+		completedDate: null,
+		dueDate: null,
+		recurrence: {
+			type: 'none',
+		},
+		dependencies: [],
+		estimatedHours: 0,
+		priority: 'Moderate',
+		notes: '',
+		progress: 0,
+		workSessions: [],
+	},
 ];
 
 export default mockDataTasks;
