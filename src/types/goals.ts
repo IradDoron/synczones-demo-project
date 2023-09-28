@@ -202,7 +202,8 @@ export type TaskPriority =
 	| 'Moderate Low'
 	| 'Low'
 	| 'Very Low'
-	| 'Lowest';
+	| 'Lowest'
+	| null;
 
 /**
  * Represents a break taken during a work session.
@@ -242,7 +243,13 @@ export type WorkSession = {
 	endTime: Date | null;
 	duration: number | null;
 	mood?: 'Very Happy' | 'Happy' | 'Neutral' | 'Unhappy' | 'Very Unhappy' | null;
-	productivityRating?: 'Very Low' | 'Low' | 'Medium' | 'High' | 'Very High' | null;
+	productivityRating?:
+		| 'Very Low'
+		| 'Low'
+		| 'Medium'
+		| 'High'
+		| 'Very High'
+		| null;
 	notes?: string;
 	breaks?: Break[];
 };

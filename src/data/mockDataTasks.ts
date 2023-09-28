@@ -24,6 +24,7 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'In Progress',
+		priority: null,
 	},
 	{
 		id: 2,
@@ -49,6 +50,7 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'Not Started',
+		priority: null,
 	},
 	{
 		id: 3,
@@ -74,6 +76,7 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'Not Started',
+		priority: null,
 	},
 	{
 		id: 4,
@@ -97,6 +100,7 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'Not Started',
+		priority: null,
 	},
 	{
 		id: 5,
@@ -121,12 +125,15 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'Not Started',
+		priority: null,
 	},
 	{
 		id: 6,
 		title: 'Implement HTML5 Features',
 		url: 'implement-html5-features--6',
 		taskType: 'Goal',
+		priority: null,
+
 		description:
 			'Learn and use HTML5 features like geolocation and local storage.',
 		relatedGoalsIds: [4],
@@ -157,6 +164,7 @@ const mockDataTasks: Task[] = [
 		title: 'Optimize for SEO',
 		url: 'optimize-for-seo--7',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn how to use HTML elements to optimize webpages for search engines.',
 		relatedGoalsIds: [4],
@@ -181,6 +189,7 @@ const mockDataTasks: Task[] = [
 		title: 'Practice HTML Accessibility',
 		url: 'practice-html-accessibility--8',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn how to create web content that is accessible to all users.',
 		relatedGoalsIds: [4],
@@ -206,6 +215,7 @@ const mockDataTasks: Task[] = [
 		title: 'HTML Validation',
 		url: 'html-validation--9',
 		taskType: 'Goal',
+		priority: null,
 		description: 'Learn how to validate HTML code for standards compliance.',
 		relatedGoalsIds: [4],
 		taskSteps: [
@@ -229,6 +239,7 @@ const mockDataTasks: Task[] = [
 		title: 'Build Responsive Webpages',
 		url: 'build-responsive-webpages--10',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn how to create webpages that adapt to different screen sizes.',
 		relatedGoalsIds: [4],
@@ -255,6 +266,7 @@ const mockDataTasks: Task[] = [
 		title: 'Advanced HTML Forms',
 		url: 'advanced-html-forms--11',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Explore advanced HTML form features, such as form validation and custom styling.',
 		relatedGoalsIds: [4],
@@ -281,6 +293,7 @@ const mockDataTasks: Task[] = [
 		title: 'HTML Email Markup',
 		url: 'html-email-markup--12',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn how to create responsive and well-structured HTML emails.',
 		relatedGoalsIds: [4],
@@ -306,6 +319,7 @@ const mockDataTasks: Task[] = [
 		title: 'HTML and CSS Frameworks',
 		url: 'html-and-css-frameworks--13',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Explore popular HTML and CSS frameworks like Bootstrap and Foundation.',
 		relatedGoalsIds: [4],
@@ -337,6 +351,7 @@ const mockDataTasks: Task[] = [
 		title: 'HTML5 Canvas and Graphics',
 		url: 'html5-canvas-and-graphics--14',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn how to use HTML5 Canvas for dynamic graphics and animations.',
 		relatedGoalsIds: [4],
@@ -362,6 +377,7 @@ const mockDataTasks: Task[] = [
 		title: 'Web Performance Optimization',
 		url: 'web-performance-optimization--15',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn techniques to optimize the performance of web pages built with HTML.',
 		relatedGoalsIds: [4],
@@ -395,6 +411,7 @@ const mockDataTasks: Task[] = [
 		title: 'Web Accessibility Testing',
 		url: 'web-accessibility-testing--16',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn how to test and ensure web accessibility compliance in HTML code.',
 		relatedGoalsIds: [4],
@@ -420,6 +437,7 @@ const mockDataTasks: Task[] = [
 		title: 'HTML and SEO Optimization',
 		url: 'html-and-seo-optimization--17',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Implement HTML practices to improve search engine optimization (SEO).',
 		relatedGoalsIds: [4],
@@ -446,6 +464,7 @@ const mockDataTasks: Task[] = [
 		title: 'Version Control with HTML',
 		url: 'version-control-with-html--18',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Learn version control concepts and apply them to HTML projects.',
 		relatedGoalsIds: [4],
@@ -476,6 +495,7 @@ const mockDataTasks: Task[] = [
 		title: 'Cross-Browser Compatibility',
 		url: 'cross-browser-compatibility--19',
 		taskType: 'Goal',
+		priority: null,
 		description:
 			'Test and ensure your HTML code works correctly on different web browsers.',
 		relatedGoalsIds: [4],
@@ -519,6 +539,7 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		status: 'Not Started',
+		priority: null,
 	},
 	{
 		id: 21,
@@ -529,6 +550,7 @@ const mockDataTasks: Task[] = [
 		learningResourceId: 1,
 		relatedGoalsIds: [3],
 		status: 'In Progress',
+		priority: null,
 	},
 	{
 		id: 22,
@@ -557,6 +579,7 @@ const mockDataTasks: Task[] = [
 				status: 'Not Started',
 			},
 		],
+		priority: null,
 	},
 	{
 		id: 23,
