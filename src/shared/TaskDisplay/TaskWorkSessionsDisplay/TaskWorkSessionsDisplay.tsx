@@ -30,7 +30,7 @@ const getTotalWorkTimeOfWorkkSession = (workSession: WorkSession) => {
 	let totalWorkTime = duration;
 	if (breaks && breaks.length > 0) {
 		breaks.forEach((breakItem) => {
-			totalWorkTime -= breakItem.duration;
+			totalWorkTime -= breakItem.duration || 0;
 		});
 	}
 	return totalWorkTime;
@@ -41,7 +41,7 @@ const getTotalBreakTimeOfWorkSession = (workSession: WorkSession) => {
 	let totalBreakTime = 0;
 	if (breaks && breaks.length > 0) {
 		breaks.forEach((breakItem) => {
-			totalBreakTime += breakItem.duration;
+			totalBreakTime += breakItem.duration || 0;
 		});
 	}
 	return totalBreakTime;
