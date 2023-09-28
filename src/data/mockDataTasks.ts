@@ -756,7 +756,7 @@ const mockDataTasks: Task[] = [
 		taskType: 'General',
 		description: 'להסיע את אביב לתחנה בפתח תקווה',
 		taskSteps: [],
-		status: 'Not Started',
+		status: 'Completed',
 		learningResourceId: 0,
 		relatedGoalsIds: [],
 		subTasksIds: [],
