@@ -43,11 +43,26 @@ const TaskDisplay = ({ task }: Props) => {
 			<TaskDependenciesDisplay task={task} />
 			<h2>Attachments</h2>
 			{attachments && (
-				<ul>
-					{attachments?.map((attachment) => {
-						return <li key={attachment}>{attachment}</li>;
-					})}
-				</ul>
+				<table>
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Title</th>
+							<th>URL</th>
+							<th>Notes</th>
+						</tr>
+					</thead>
+					<tbody>
+						{attachments.map((attachment) => (
+							<tr key={attachment.id}>
+								<td>{attachment.id}</td>
+								<td>{attachment.title}</td>
+								<td>{attachment.url}</td>
+								<td>{attachment.notes}</td>
+							</tr>
+						))}
+					</tbody>
+				</table>
 			)}
 			<TaskStepsDisplay task={task} />
 			<TaskSubTasksDisplay task={task} />
