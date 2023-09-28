@@ -1,5 +1,7 @@
 // Define export types for the Vision, Long-Term Goal, and Short-Term Goal entities
 
+import { type } from 'os';
+
 /**
  * Represents a Vision in the Goals Manager app.
  */
@@ -177,6 +179,13 @@ export type YearlyRecurrence = {
 	time: string;
 };
 
+export type TaskRecurrenceType =
+	| 'none'
+	| 'daily'
+	| 'weekly'
+	| 'monthly'
+	| 'yearly';
+
 export type TaskRecurrence =
 	| { type: 'none' }
 	| { type: 'daily'; interval: number; time: string }
@@ -279,14 +288,14 @@ export type Task = {
 	subTasksIds?: number[];
 	attachments?: string[];
 	labels?: string[];
-	createDate?: Date;
-	startDate?: Date;
-	completedDate?: Date;
-	dueDate?: Date;
+	createDate?: Date | string;
+	startDate?: Date | string;
+	completedDate?: Date | null | string;
+	dueDate?: Date | null | string;
 	recurrence?: TaskRecurrence;
 	dependencies?: number[];
 	estimatedHours?: number;
-	priority?: TaskPriority;
+	priority: TaskPriority;
 	notes?: string;
 	progress?: 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
 	workSessions?: WorkSession[];

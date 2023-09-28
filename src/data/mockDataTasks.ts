@@ -591,6 +591,37 @@ const mockDataTasks: Task[] = [
 			},
 		],
 	},
+	{
+		id: 24,
+		title: '',
+		url: '',
+		taskType: 'General',
+		description: '',
+		taskSteps: [],
+		status: 'Not Started',
+		learningResourceId: 0,
+		relatedGoalsIds: [],
+		subTasksIds: [],
+		attachments: [],
+		labels: [],
+		createDate: new Date(
+			'Wed Sep 27 2023 16:26:01 GMT+0300 (Israel Daylight Time)'
+		),
+		startDate: new Date(
+			'Wed Sep 27 2023 16:26:01 GMT+0300 (Israel Daylight Time)'
+		),
+		completedDate: null,
+		dueDate: null,
+		recurrence: {
+			type: 'none',
+		},
+		dependencies: [],
+		estimatedHours: 0,
+		priority: 'Moderate',
+		notes: '',
+		progress: 0,
+		workSessions: [],
+	},
 ];
 
 export default mockDataTasks;
