@@ -2,9 +2,7 @@ import { Task } from '@/types';
 
 type Props = {
 	formData: Task;
-	handleChange: (
-		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-	) => void;
+	handleChange: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
 };
 
 const DescriptionInput = ({ formData, handleChange }: Props) => {
@@ -13,8 +11,7 @@ const DescriptionInput = ({ formData, handleChange }: Props) => {
 			<h3 className='hidden'>Description</h3>
 			<details>
 				<summary>Description</summary>
-				<input
-					type='text'
+				<textarea
 					name='description'
 					value={formData.description}
 					onChange={handleChange}

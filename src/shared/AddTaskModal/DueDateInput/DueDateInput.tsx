@@ -32,7 +32,6 @@ const DueDateInput = ({ formData, setFormData }: Props) => {
 	};
 
 	const handleCurrentTimeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-		console.log(e.target.name, e.target.value);
 		setCurrentTime({
 			...currentTime,
 			[e.target.name]: parseInt(e.target.value),

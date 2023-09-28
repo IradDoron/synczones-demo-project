@@ -254,6 +254,13 @@ export type WorkSession = {
 	breaks?: Break[];
 };
 
+export type TaskAttachment = {
+	id: number;
+	title: string;
+	url: string;
+	notes: string;
+};
+
 /**
  * Represents a task within the task management system.
  *
@@ -293,10 +300,10 @@ export type Task = {
 	learningResourceId?: number;
 	relatedGoalsIds?: number[];
 	subTasksIds?: number[];
-	attachments?: string[];
+	attachments?: TaskAttachment[];
 	labels?: string[];
 	createDate?: Date | string;
-	startDate?: Date | string;
+	startDate?: Date | string | null;
 	completedDate?: Date | null | string;
 	dueDate?: Date | null | string;
 	recurrence?: TaskRecurrence;

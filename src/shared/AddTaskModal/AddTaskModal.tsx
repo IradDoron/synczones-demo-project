@@ -1,7 +1,8 @@
 'use client';
 
 import mockDataTasks from '@/data/mockDataTasks';
-import { Task, TaskStep } from '@/types';
+import { Task } from '@/types';
+import { getItemById } from '@/utils';
 import { useEffect, useState } from 'react';
 import AttachmentsInput from './AttachmentsInput';
 import DependenciesInput from './DependenciesInput';
@@ -26,37 +27,50 @@ import WorkSessionsInput from './WorkSessionsInput';
 type Props = {
 	isOpen: boolean;
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
+	taskId?: number;
 };
 
-const AddTaskModal = ({ isOpen, setIsOpen }: Props) => {
-	const [formData, setFormData] = useState<Task>({
-		id: mockDataTasks.length + 1,
-		title: '',
-		url: '',
-		taskType: 'General',
-		description: '',
-		taskSteps: [],
-		status: 'Not Started',
-		learningResourceId: 0,
-		relatedGoalsIds: [],
-		subTasksIds: [],
-		attachments: [],
-		labels: [],
-		createDate: `new Date(${new Date()}) `,
-		startDate: `new Date(${new Date()}) `,
-		completedDate: null,
-		dueDate: null,
-		recurrence: { type: 'none' },
-		dependencies: [],
-		estimatedHours: 0,
-		priority: 'Moderate',
-		notes: '',
-		progress: 0,
-		workSessions: [],
-	});
+const initNewTask = {
+	id: mockDataTasks.length + 1,
+	title: '',
+	url: '',
+	taskType: 'General',
+	description: '',
+	taskSteps: [],
+	status: 'Not Started',
+	learningResourceId: 0,
+	relatedGoalsIds: [],
+	subTasksIds: [],
+	attachments: [],
+	labels: [],
+	createDate: new Date(),
+	startDate: null,
+	completedDate: null,
+	dueDate: null,
+	recurrence: { type: 'none' },
+	dependencies: [],
+	estimatedHours: 0,
+	priority: 'Moderate',
+	notes: '',
+	progress: 0,
+	workSessions: [],
+} as Task;
+
+const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
+	const [formData, setFormData] = useState<Task>(
+		taskId ? (getItemById(mockDataTasks, taskId) as Task) : initNewTask
+	);
 
 	useEffect(() => {
-		const title = formData.title;
+		if (taskId) {
+			setFormData(getItemById(mockDataTasks, taskId) as Task);
+		} else {
+			setFormData(initNewTask);
+		}
+	}, [taskId]);
+
+	useEffect(() => {
+		const { title } = formData;
 		if (title === '') {
 			setFormData({
 				...formData,
@@ -64,11 +78,22 @@ const AddTaskModal = ({ isOpen, setIsOpen }: Props) => {
 			});
 			return;
 		}
-		let url = `${title.toLowerCase().replace(/\s/g, '-')}--${formData.id}`;
-		setFormData({
+		let url = '';
+		const titleWords = title.split(' ');
+		titleWords.forEach((word, index) => {
+			if (index === 0) {
+				url += word.toLowerCase();
+				return;
+			}
+			url += `-${word.toLowerCase()}`;
+		});
+		url += `--${formData.id}`;
+		const newFormData = {
 			...formData,
 			url,
-		});
+		};
+
+		setFormData(newFormData);
 	}, [formData.title]);
 
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -76,7 +101,9 @@ const AddTaskModal = ({ isOpen, setIsOpen }: Props) => {
 	};
 
 	const handleChange = (
-		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+		event: React.ChangeEvent<
+			HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+		>
 	) => {
 		const { name, value } = event.target;
 		setFormData({
@@ -167,7 +194,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }: Props) => {
 						fontSize: '1.25rem',
 					}}
 				>
-					{JSON.stringify(formData, null, 2)}
+					{formatFormData()}
 				</pre>
 				<button onClick={handleCopyToClipboard}>Copy to Clipboard</button>
 				<button
