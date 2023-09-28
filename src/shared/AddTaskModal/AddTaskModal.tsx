@@ -159,7 +159,7 @@ const AddTaskModal = ({ isOpen, setIsOpen }: Props) => {
 						<PriorityInput formData={formData} setFormData={setFormData} />
 						<NotesInput formData={formData} setFormData={setFormData} />
 						<ProgressInput formData={formData} setFormData={setFormData} />
-						<WorkSessionsInput />
+						<WorkSessionsInput formData={formData} setFormData={setFormData} />
 					</div>
 				</form>
 				<pre

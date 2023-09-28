@@ -213,9 +213,9 @@ export type TaskPriority =
  * @property {string} [activity] - Description of what the user did during the break (optional).
  */
 export type Break = {
-	startTime: Date;
-	endTime: Date;
-	duration: number;
+	startTime: Date | null;
+	endTime: Date | null;
+	duration: number | null;
 	reason?: string;
 	activity?: string;
 };
@@ -241,8 +241,8 @@ export type WorkSession = {
 	startTime: Date;
 	endTime: Date | null;
 	duration: number | null;
-	mood?: 'Very Happy' | 'Happy' | 'Neutral' | 'Unhappy' | 'Very Unhappy';
-	productivityRating?: 'Very Low' | 'Low' | 'Medium' | 'High' | 'Very High';
+	mood?: 'Very Happy' | 'Happy' | 'Neutral' | 'Unhappy' | 'Very Unhappy' | null;
+	productivityRating?: 'Very Low' | 'Low' | 'Medium' | 'High' | 'Very High' | null;
 	notes?: string;
 	breaks?: Break[];
 };
