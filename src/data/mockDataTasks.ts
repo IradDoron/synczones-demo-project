@@ -1173,7 +1173,7 @@ const mockDataTasks: Task[] = [
 			},
 		],
 		labels: [],
-		createDate: new Date(),
+		createDate: new Date('2023-09-29T11:44:21.607Z'),
 		startDate: null,
 		completedDate: null,
 		dueDate: null,
@@ -1185,7 +1185,19 @@ const mockDataTasks: Task[] = [
 		priority: 'High',
 		notes: '',
 		progress: 0,
-		workSessions: [],
+		workSessions: [
+			{
+				id: 1,
+				taskId: 29,
+				startTime: new Date('2023-09-29T14:55'),
+				endTime: null,
+				duration: null,
+				mood: null,
+				productivityRating: null,
+				notes: '',
+				breaks: [],
+			},
+		],
 	},
 ];
 

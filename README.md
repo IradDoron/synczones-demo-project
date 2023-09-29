@@ -15,3 +15,17 @@ This demo project is a simple example of how the data model of SyncZones could l
 - [See the demo](https://synczones-demo-project.vercel.app/)
 - [See the code](https://github.com/IradDoron/synczones-demo-project)
 
+## Features (in priority order)
+
+- [x] Implement internasionalization (i18n) for the app
+- [x] Implement MUI infrastructure:
+    - [x] Implement MUI theme system
+    - [x] Implement generic core customed MUI components
+    - [x] Implement shared components using the core components
+- [x] Implement the data model
+- [x] Implement the data model API
+- [x] Implement the data model API tests
+- [x] Implement the data model API documentation
+- [x] Implement users management system (login, logout, register, etc.)
+
+
