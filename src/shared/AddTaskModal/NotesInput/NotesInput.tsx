@@ -1,5 +1,4 @@
 import { Task } from '@/types';
-import { getCommaSeparatedStringsFromArray } from '@/utils';
 
 type Props = {
 	formData: Task;

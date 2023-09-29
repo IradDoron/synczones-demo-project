@@ -72,6 +72,7 @@ section > details > summary {
 
 .navbar {
 	overflow: hidden;
+	display: flex;
 }
 
 .navbar a {
