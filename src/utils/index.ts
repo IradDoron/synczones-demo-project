@@ -346,3 +346,19 @@ export const getHebrewUrlStringFromHebrewUrl = (hebrewUrl: string) => {
 
 	return result;
 };
+
+export const isExistAndNotEmpty = (value: any) => {
+	let bool = false;
+	if (value) {
+		if (Array.isArray(value)) {
+			bool = value.length > 0;
+		} else if (typeof value === 'string') {
+			bool = value.length > 0;
+		} else if (typeof value === 'object') {
+			bool = Object.keys(value).length > 0;
+		} else if (typeof value === 'number') {
+			bool = true;
+		}
+	}
+	return bool;
+};

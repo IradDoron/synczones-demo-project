@@ -1,5 +1,5 @@
 import { Task } from '@/types';
-import { getCommaSeparatedStringsFromArray } from '@/utils';
+import { getCommaSeparatedStringsFromArray, isExistAndNotEmpty } from '@/utils';
 
 type Props = {
 	task: Task;
@@ -24,9 +24,11 @@ const TaskMetaInfoDisplay = ({ task }: Props) => {
 						<th>Type</th>
 						<th>Priority</th>
 						<th>Progress</th>
-						<th>Labels</th>
-						<th>Learning Resource ID</th>
-						<th>Related Goals IDs</th>
+						{isExistAndNotEmpty(labels) && <th>Labels</th>}
+						{isExistAndNotEmpty(learningResourceId) && (
+							<th>Learning Resource ID</th>
+						)}
+						{isExistAndNotEmpty(relatedGoalsIds) && <th>Related Goals IDs</th>}
 					</tr>
 				</thead>
 				<tbody>
@@ -34,9 +36,15 @@ const TaskMetaInfoDisplay = ({ task }: Props) => {
 						<td>{taskType}</td>
 						<td>{priority}</td>
 						<td>{progress}</td>
-						<td>{getCommaSeparatedStringsFromArray(labels)}</td>
-						<td>{learningResourceId}</td>
-						<td>{getCommaSeparatedStringsFromArray(relatedGoalsIds)}</td>
+						{isExistAndNotEmpty(labels) && (
+							<td>{getCommaSeparatedStringsFromArray(labels)}</td>
+						)}
+						{isExistAndNotEmpty(learningResourceId) && (
+							<td>{learningResourceId}</td>
+						)}
+						{isExistAndNotEmpty(relatedGoalsIds) && (
+							<td>{getCommaSeparatedStringsFromArray(relatedGoalsIds)}</td>
+						)}
 					</tr>
 				</tbody>
 			</table>

@@ -23,7 +23,7 @@ const EstimatedHoursInput = ({ formData, setFormData }: Props) => {
 				<input
 					type='number'
 					name='estimatedHours'
-					value={formData.estimatedHours}
+					value={formData.estimatedHours || 0}
 					onChange={handleEstimatedHoursChange}
 				/>
 			</details>

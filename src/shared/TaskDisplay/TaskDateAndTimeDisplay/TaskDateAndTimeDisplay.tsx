@@ -1,4 +1,5 @@
 import { Task } from '@/types';
+import { isExistAndNotEmpty } from '@/utils';
 
 type Props = {
 	task: Task;
@@ -14,19 +15,23 @@ const TaskDateAndTimeDisplay = ({ task }: Props) => {
 				<thead>
 					<tr>
 						<th>Create Date</th>
-						<th>Start Date</th>
-						<th>Completed Date</th>
-						<th>Due Date</th>
-						<th>Estimated Hours to Complete</th>
+						{isExistAndNotEmpty(startDate) && <th>Start Date</th>}
+						{isExistAndNotEmpty(completedDate) && <th>Completed Date</th>}
+						{isExistAndNotEmpty(dueDate) && <th>Due Date</th>}
+						{isExistAndNotEmpty(estimatedHours) && (
+							<th>Estimated Hours to Complete</th>
+						)}
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
 						<td>{createDate?.toString()}</td>
-						<td>{startDate?.toString()}</td>
-						<td>{completedDate?.toString()}</td>
-						<td>{dueDate?.toString()}</td>
-						<td>{estimatedHours}</td>
+						{isExistAndNotEmpty(startDate) && <td>{startDate?.toString()}</td>}
+						{isExistAndNotEmpty(completedDate) && (
+							<td>{completedDate?.toString()}</td>
+						)}
+						{isExistAndNotEmpty(dueDate) && <td>{dueDate?.toString()}</td>}
+						{isExistAndNotEmpty(estimatedHours) && <td>{estimatedHours}</td>}
 					</tr>
 				</tbody>
 			</table>
