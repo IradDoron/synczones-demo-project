@@ -297,7 +297,7 @@ export type Task = {
 	description: string;
 	taskSteps: TaskStep[];
 	status: 'Completed' | 'In Progress' | 'Not Started';
-	learningResourceId: number;
+	learningResourceId: number | null;
 	relatedGoalsIds: number[];
 	subTasksIds: number[];
 	attachments: TaskAttachment[];
@@ -309,7 +309,7 @@ export type Task = {
 	recurrence: TaskRecurrence;
 	dependencies: number[];
 	estimatedHours: number | null;
-	priority: TaskPriority;
+	priority: TaskPriority | null;
 	notes: string;
 	progress: 0 | 10 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100;
 	workSessions: WorkSession[];
