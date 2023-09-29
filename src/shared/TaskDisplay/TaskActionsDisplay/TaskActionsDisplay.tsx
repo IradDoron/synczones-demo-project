@@ -31,7 +31,7 @@ const TaskActionsDisplay = ({ taskId }: Props) => {
 			<AddTaskModal
 				isOpen={isModalOpen}
 				setIsOpen={setIsModalOpen}
-				taskId={taskId}
+				info={{ taskId }}
 			/>
 		</div>
 	);

@@ -27,7 +27,10 @@ import WorkSessionsInput from './WorkSessionsInput';
 type Props = {
 	isOpen: boolean;
 	setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-	taskId?: number;
+	info?: {
+		taskId?: number;
+		goalId?: number;
+	};
 };
 
 const initNewTask = {
@@ -56,9 +59,17 @@ const initNewTask = {
 	workSessions: [],
 } as Task;
 
-const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
+const AddTaskModal = ({ isOpen, setIsOpen, info }: Props) => {
+	const { taskId, goalId } = info || {};
+	const modifiedNewTask = {
+		...initNewTask,
+		id: mockDataTasks.length + 1,
+		relatedGoalsIds: goalId
+			? [...initNewTask.relatedGoalsIds, goalId]
+			: [...initNewTask.relatedGoalsIds],
+	};
 	const [formData, setFormData] = useState<Task>(
-		taskId ? (getItemById(mockDataTasks, taskId) as Task) : initNewTask
+		taskId ? (getItemById(mockDataTasks, taskId) as Task) : modifiedNewTask
 	);
 
 	useEffect(() => {
@@ -67,7 +78,16 @@ const AddTaskModal = ({ isOpen, setIsOpen, taskId }: Props) => {
 		} else {
 			setFormData(initNewTask);
 		}
-	}, [taskId]);
+
+		if (goalId) {
+			console.log('goalId', goalId);
+			console.log('formData', formData);
+			setFormData({
+				...formData,
+				relatedGoalsIds: [...formData.relatedGoalsIds, goalId],
+			});
+		}
+	}, [taskId, goalId]);
 
 	useEffect(() => {
 		const { title } = formData;

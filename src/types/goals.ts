@@ -298,7 +298,7 @@ export type Task = {
 	taskSteps?: TaskStep[];
 	status: 'Completed' | 'In Progress' | 'Not Started';
 	learningResourceId?: number;
-	relatedGoalsIds?: number[];
+	relatedGoalsIds: number[];
 	subTasksIds?: number[];
 	attachments?: TaskAttachment[];
 	labels?: string[];
