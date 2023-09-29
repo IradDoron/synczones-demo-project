@@ -1,4 +1,5 @@
 import { Task, WorkSession } from '@/types';
+import { isExistAndNotEmpty } from '@/utils';
 
 type Props = {
 	task: Task;
@@ -52,53 +53,57 @@ const TaskWorkSessionsDisplay = ({ task }: Props) => {
 
 	return (
 		<>
-			<h2>Work Sessions</h2>
-			{workSessions && workSessions.length > 0 ? (
-				<div>
-					<table>
-						<thead>
-							<tr>
-								<th>Work Session ID</th>
-								<th>Task ID</th>
-								<th>Start Time</th>
-								<th>End Time</th>
-								<th>Duration</th>
-								<th>Mood</th>
-								<th>Productivity Rating</th>
-								<th>Notes</th>
-							</tr>
-						</thead>
-						<tbody>
-							{workSessions.map((session) => {
-								const {
-									id,
-									taskId,
-									startTime,
-									endTime,
-									duration,
-									mood,
-									productivityRating,
-									notes,
-								} = session;
-
-								return (
-									<tr key={id}>
-										<td>{id}</td>
-										<td>{taskId}</td>
-										<td>{startTime.toString()}</td>
-										<td>{endTime?.toString()}</td>
-										<td>{formatTimeDuration(duration)}</td>
-										<td>{mood}</td>
-										<td>{productivityRating}</td>
-										<td>{notes}</td>
+			{isExistAndNotEmpty(workSessions) && (
+				<>
+					<h2>Work Sessions</h2>
+					{workSessions && workSessions.length > 0 ? (
+						<div>
+							<table>
+								<thead>
+									<tr>
+										<th>Work Session ID</th>
+										<th>Task ID</th>
+										<th>Start Time</th>
+										<th>End Time</th>
+										<th>Duration</th>
+										<th>Mood</th>
+										<th>Productivity Rating</th>
+										<th>Notes</th>
 									</tr>
-								);
-							})}
-						</tbody>
-					</table>
-				</div>
-			) : (
-				<p>No work sessions available.</p>
+								</thead>
+								<tbody>
+									{workSessions.map((session) => {
+										const {
+											id,
+											taskId,
+											startTime,
+											endTime,
+											duration,
+											mood,
+											productivityRating,
+											notes,
+										} = session;
+
+										return (
+											<tr key={id}>
+												<td>{id}</td>
+												<td>{taskId}</td>
+												<td>{startTime.toString()}</td>
+												<td>{endTime?.toString()}</td>
+												<td>{formatTimeDuration(duration)}</td>
+												<td>{mood}</td>
+												<td>{productivityRating}</td>
+												<td>{notes}</td>
+											</tr>
+										);
+									})}
+								</tbody>
+							</table>
+						</div>
+					) : (
+						<p>No work sessions available.</p>
+					)}
+				</>
 			)}
 		</>
 	);

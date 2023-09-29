@@ -300,7 +300,7 @@ export type Task = {
 	learningResourceId?: number;
 	relatedGoalsIds: number[];
 	subTasksIds?: number[];
-	attachments?: TaskAttachment[];
+	attachments: TaskAttachment[];
 	labels?: string[];
 	createDate?: Date | string;
 	startDate?: Date | string | null;

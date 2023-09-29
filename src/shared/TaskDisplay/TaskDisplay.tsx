@@ -1,9 +1,11 @@
 import { STATUS_COLORS } from '@/constants';
 import { Task } from '@/types';
 import TaskActionsDisplay from './TaskActionsDisplay';
+import TaskAttachmentsDisplay from './TaskAttachmentsDisplay';
 import TaskDateAndTimeDisplay from './TaskDateAndTimeDisplay';
 import TaskDependenciesDisplay from './TaskDependenciesDisplay';
 import TaskMetaInfoDisplay from './TaskMetaInfoDisplay';
+import TaskNotesDisplay from './TaskNotesDisplay';
 import TaskRecurrenceDisplay from './TaskRecurrenceDisplay';
 import TaskStepsDisplay from './TaskStepsDisplay';
 import TaskSubTasksDisplay from './TaskSubTasksDisplay';
@@ -37,33 +39,10 @@ const TaskDisplay = ({ task }: Props) => {
 			</p>
 			<TaskMetaInfoDisplay task={task} />
 			<TaskDateAndTimeDisplay task={task} />
-
-			<h2>Notes</h2>
-			<p>{notes}</p>
+			<TaskNotesDisplay task={task} />
 			<TaskDependenciesDisplay task={task} />
-			<h2>Attachments</h2>
-			{attachments && (
-				<table>
-					<thead>
-						<tr>
-							<th>ID</th>
-							<th>Title</th>
-							<th>URL</th>
-							<th>Notes</th>
-						</tr>
-					</thead>
-					<tbody>
-						{attachments.map((attachment) => (
-							<tr key={attachment.id}>
-								<td>{attachment.id}</td>
-								<td>{attachment.title}</td>
-								<td>{attachment.url}</td>
-								<td>{attachment.notes}</td>
-							</tr>
-						))}
-					</tbody>
-				</table>
-			)}
+			<TaskAttachmentsDisplay task={task} />
+
 			<TaskStepsDisplay task={task} />
 			<TaskSubTasksDisplay task={task} />
 			<TaskRecurrenceDisplay task={task} />
