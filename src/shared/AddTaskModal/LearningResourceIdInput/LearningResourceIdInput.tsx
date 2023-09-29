@@ -16,7 +16,7 @@ const LearningResourceIdInput = ({ formData, handleChange }: Props) => {
 				<input
 					type='text'
 					name='learningResourceId'
-					value={formData.learningResourceId}
+					value={formData.learningResourceId || ''}
 					onChange={handleChange}
 				/>
 			</details>
