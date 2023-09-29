@@ -36,7 +36,7 @@ const mockDataGoals: Goal[] = [
 				},
 			],
 		},
-		tasks: [21],
+		tasks: [21, 29],
 	},
 	{
 		id: 4,

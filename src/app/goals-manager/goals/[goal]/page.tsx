@@ -2,6 +2,7 @@
 
 import { STATUS_COLORS } from '@/constants';
 import mockDataGoals from '@/data/mockDataGoals';
+import AddTaskModal from '@/shared/AddTaskModal';
 import GoalProcessDisplay from '@/shared/GoalProcessDisplay';
 import GoalTasksDisplay from '@/shared/GoalTasksDisplay';
 import { Goal } from '@/types';
@@ -11,11 +12,13 @@ import {
 	getGoalIdFromGoalUrl,
 } from '@/utils';
 import { useParams } from 'next/navigation';
+import { useState } from 'react';
 
 const GoalPage = () => {
 	const { goal } = useParams() as { goal: string };
 	const goalId = getGoalIdFromGoalUrl(mockDataGoals, goal);
 	const goalData = getGoalFromGoalId(mockDataGoals, goalId);
+	const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
 
 	if (!goalData) {
 		return (
@@ -30,6 +33,10 @@ const GoalPage = () => {
 		goalData as Goal;
 
 	const { process } = goalData as Goal;
+
+	const handleAddTask = () => {
+		setIsTaskModalOpen(true);
+	};
 
 	return (
 		<div>
@@ -74,9 +81,15 @@ const GoalPage = () => {
 				<h3>What should I do to achieve this goal?</h3>
 				<GoalProcessDisplay goalProcess={process} />
 				<h3>What tasks should I do?</h3>
-				<button>Add Task</button>
+				<button onClick={handleAddTask}>Add Task</button>
 				<GoalTasksDisplay goalId={id} />
+				<button onClick={handleAddTask}>Add Task</button>
 			</div>
+			<AddTaskModal
+				isOpen={isTaskModalOpen}
+				setIsOpen={setIsTaskModalOpen}
+				info={{ goalId: id }}
+			/>
 		</div>
 	);
 };
