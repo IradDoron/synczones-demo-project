@@ -1,27 +1,64 @@
+import { Locale } from '@/i18n.config';
 import LocaleSwitcher from '@/shared/LocaleSwitcher';
+import { getDictionary } from '@/utils/dictionary';
 import Link from 'next/link';
 
-const Navbar = () => {
+type Props = {
+	params: { lang: Locale };
+};
+
+const Navbar = async ({ params }: Props) => {
+	const { lang } = params;
+	const dictionary = await getDictionary(lang);
+	const { Home, Managers } = dictionary.shared.Navbar.Links;
+
 	return (
 		<nav className='navbar'>
-			<Link href='/'>Home</Link>
+			<Link href={`/${lang}`}>{Home}</Link>
 			<div className='dropdown'>
-				<button className='dropbtn'>Managers</button>
+				<button className='dropbtn'>{Managers.Tab}</button>
 				<div className='dropdown-content'>
-					<Link href='/tasks-manager'>Tasks Manager</Link>
-					<Link href='/career-manager'>Career Manager</Link>
-					<Link href='/collaboration-manager'>Collaboration Manager</Link>
-					<Link href='/finance-manager'>Finance Manager</Link>
-					<Link href='/goals-manager'>Goals Manager</Link>
-					<Link href='/health-manager'>Health Manager</Link>
-					<Link href='/hobbies-manager'>Hobbies Manager</Link>
-					<Link href='/learning-manager'>Learning Manager</Link>
-					<Link href='/organization-manager'>Organization Manager</Link>
-					<Link href='/projects-manager'>Projects Manager</Link>
-					<Link href='/relationships-manager'>Relationships Manager</Link>
-					<Link href='/routine-manager'>Routine Manager</Link>
-					<Link href='/skills-manager'>Skills Manager</Link>
-					<Link href='/time-manager'>Time Manager</Link>
+					<Link href={`/${lang}/tasks-manager`}>
+						{Managers['Tasks Manager']}
+					</Link>
+					<Link href={`/${lang}/career-manager`}>
+						{Managers['Career Manager']}
+					</Link>
+					<Link href={`/${lang}/collaboration-manager`}>
+						{Managers['Collaboration Manager']}
+					</Link>
+					<Link href={`/${lang}/finance-manager`}>
+						{Managers['Finance Manager']}
+					</Link>
+
+					<Link href={`/${lang}/goals-manager`}>
+						{Managers['Goals Manager']}
+					</Link>
+					<Link href={`/${lang}/health-manager`}>
+						{Managers['Health Manager']}
+					</Link>
+					<Link href={`/${lang}/hobbies-manager`}>
+						{Managers['Hobbies Manager']}
+					</Link>
+					<Link href={`/${lang}/learning-manager`}>
+						{Managers['Learning Manager']}
+					</Link>
+					<Link href={`/${lang}/organization-manager`}>
+						{Managers['Organization Manager']}
+					</Link>
+					<Link href={`/${lang}/projects-manager`}>
+						{Managers['Projects Manager']}
+					</Link>
+					<Link href={`/${lang}/relationships-manager`}>
+						{Managers['Relationships Manager']}
+					</Link>
+					<Link href={`/${lang}/routines-manager`}>
+						{Managers['Routines Manager']}
+					</Link>
+					<Link href={`/${lang}/skills-manager`}>
+						{Managers['Skills Manager']}
+					</Link>
+					<Link href={`/${lang}/time-manager`}>{Managers['Time Manager']}</Link>
 				</div>
 			</div>
 			<LocaleSwitcher />

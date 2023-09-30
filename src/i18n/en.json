@@ -1,6 +1,36 @@
 {
-	"page": {
-		"title": "Home",
-		"description": "This is the home page."
+	"app": {
+		"career-manager": {
+			"page": {
+				"title": "Career Manager"
+			}
+		}
+	},
+	"shared": {
+		"Navbar": {
+			"Links": {
+				"Home": "Home",
+				"Managers": {
+					"Tab": "Managers",
+					"Tasks Manager": "Tasks Manager",
+					"Career Manager": "Career Manager",
+					"Collaboration Manager": "Collaboration Manager",
+					"Finance Manager": "Finance Manager",
+					"Goals Manager": "Goals Manager",
+					"Health Manager": "Health Manager",
+					"Hobbies Manager": "Hobbies Manager",
+					"Learning Manager": "Learning Manager",
+					"Organization Manager": "Organization Manager",
+					"Projects Manager": "Projects Manager",
+					"Relationships Manager": "Relationships Manager",
+					"Routines Manager": "Routines Manager",
+					"Skills Manager": "Skills Manager",
+					"Time Manager": "Time Manager"
+				}
+			}
+		},
+		"LocaleSwitcher": {
+			"Language": "Language"
+		}
 	}
 }

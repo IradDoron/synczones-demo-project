@@ -1,6 +1,36 @@
 {
-	"page": {
-		"title": "בית",
-		"description": "זה דף הבית."
+	"app": {
+		"career-manager": {
+			"page": {
+				"title": "מנהל קריירה"
+			}
+		}
+	},
+	"shared": {
+		"Navbar": {
+			"Links": {
+				"Home": "בית",
+				"Managers": {
+					"Tab": "מנהלים",
+					"Tasks Manager": "מנהל משימות",
+					"Career Manager": "מנהל קריירה",
+					"Collaboration Manager": "מנהל שיתופי פעולה",
+					"Finance Manager": "מנהל פיננסים",
+					"Goals Manager": "מנהל מטרות",
+					"Health Manager": "מנהל בריאות",
+					"Hobbies Manager": "מנהל תחביבים",
+					"Learning Manager": "מנהל למידה",
+					"Organization Manager": "מנהל ארגון",
+					"Projects Manager": "מנהל פרויקטים",
+					"Relationships Manager": "מנהל יחסים בין אישיים",
+					"Routines Manager": "מנהל שגרות",
+					"Skills Manager": "מנהל כישורים",
+					"Time Manager": "מנהל זמן"
+				}
+			}
+		},
+		"LocaleSwitcher": {
+			"Language": "שפה"
+		}
 	}
 }

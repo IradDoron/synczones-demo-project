@@ -1,12 +1,14 @@
 'use client';
 
+import { i18n } from '@/i18n.config';
+import { getDictionaryClientFromPathName } from '@/utils/getDictionaryClient';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import { i18n } from '@/i18n.config';
-
-export default function LocaleSwitcher() {
+const LocaleSwitcher = () => {
 	const pathName = usePathname();
+
+	const dictionary = getDictionaryClientFromPathName(pathName);
 
 	const redirectedPathName = (locale: string) => {
 		if (!pathName) return '/';
@@ -19,11 +21,12 @@ export default function LocaleSwitcher() {
 		<div
 			className='dropdown'
 			style={{
-				alignSelf: 'flex-end',
 				marginLeft: 'auto',
 			}}
 		>
-			<button className='dropbtn'>Language</button>
+			<button className='dropbtn'>
+				{dictionary.shared.LocaleSwitcher.Language}
+			</button>
 
 			<div className='dropdown-content'>
 				{i18n.locales.map((locale) => {
@@ -36,4 +39,6 @@ export default function LocaleSwitcher() {
 			</div>
 		</div>
 	);
-}
+};
+
+export default LocaleSwitcher;

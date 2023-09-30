@@ -6,11 +6,9 @@ export default async function Home({
 }: {
 	params: { lang: Locale };
 }) {
-	const { page } = await getDictionary(lang);
-
 	return (
 		<div>
-			<h1>{page.title}</h1>
+			<h1>HOME</h1>
 		</div>
 	);
 }
