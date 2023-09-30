@@ -4,6 +4,76 @@
 			"page": {
 				"title": "מנהל קריירה"
 			}
+		},
+		"collaboration-manager": {
+			"page": {
+				"title": "מנהל שיתופי פעולה"
+			}
+		},
+		"finance-manager": {
+			"page": {
+				"title": "מנהל פיננסים"
+			}
+		},
+		"goals-manager": {
+			"page": {
+				"title": "מנהל מטרות"
+			}
+		},
+		"health-manager": {
+			"page": {
+				"title": "מנהל בריאות"
+			}
+		},
+		"hobbies-manager": {
+			"page": {
+				"title": "מנהל תחביבים"
+			}
+		},
+		"learning-manager": {
+			"page": {
+				"title": "מנהל למידה"
+			}
+		},
+		"organization-manager": {
+			"page": {
+				"title": "מנהל ארגון"
+			}
+		},
+		"projects-manager": {
+			"page": {
+				"title": "מנהל פרויקטים"
+			}
+		},
+		"relationships-manager": {
+			"page": {
+				"title": "מנהל יחסים בין אישיים"
+			}
+		},
+		"routines-manager": {
+			"page": {
+				"title": "מנהל שגרות"
+			}
+		},
+		"skills-manager": {
+			"page": {
+				"title": "מנהל כישורים"
+			}
+		},
+		"tasks-manager": {
+			"page": {
+				"title": "מנהל משימות"
+			}
+		},
+		"time-manager": {
+			"page": {
+				"title": "מנהל זמן"
+			}
+		},
+		"home": {
+			"page": {
+				"title": "בית"
+			}
 		}
 	},
 	"shared": {

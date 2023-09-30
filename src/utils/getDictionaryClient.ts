@@ -21,3 +21,14 @@ export const getDictionaryClientFromPathName = (pathName: string) => {
 			return en;
 	}
 };
+
+export const getDictionaryClient = (locale: Locale) => {
+	switch (locale) {
+		case 'en':
+			return en;
+		case 'he':
+			return he;
+		default:
+			return en;
+	}
+}

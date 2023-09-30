@@ -1,7 +1,16 @@
-const FinanceManagerPage = () => {
+import { Locale } from '@/i18n.config';
+import { getDictionary } from '@/utils/dictionary';
+
+type Props = {
+	params: { lang: Locale };
+};
+
+const FinanceManagerPage = async ({ params: { lang } }: Props) => {
+	const dictionary = await getDictionary(lang);
+	const { page } = dictionary.app['finance-manager'];
 	return (
 		<div>
-			<h1>Finance Manager</h1>
+			<h1>{page.title}</h1>
 		</div>
 	);
 };

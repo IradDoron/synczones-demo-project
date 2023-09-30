@@ -4,6 +4,76 @@
 			"page": {
 				"title": "Career Manager"
 			}
+		},
+		"collaboration-manager": {
+			"page": {
+				"title": "Collaboration Manager"
+			}
+		},
+		"finance-manager": {
+			"page": {
+				"title": "Finance Manager"
+			}
+		},
+		"goals-manager": {
+			"page": {
+				"title": "Goals Manager"
+			}
+		},
+		"health-manager": {
+			"page": {
+				"title": "Health Manager"
+			}
+		},
+		"hobbies-manager": {
+			"page": {
+				"title": "Hobbies Manager"
+			}
+		},
+		"learning-manager": {
+			"page": {
+				"title": "Learning Manager"
+			}
+		},
+		"organization-manager": {
+			"page": {
+				"title": "Organization Manager"
+			}
+		},
+		"projects-manager": {
+			"page": {
+				"title": "Projects Manager"
+			}
+		},
+		"relationships-manager": {
+			"page": {
+				"title": "Relationships Manager"
+			}
+		},
+		"routines-manager": {
+			"page": {
+				"title": "Routines Manager"
+			}
+		},
+		"skills-manager": {
+			"page": {
+				"title": "Skills Manager"
+			}
+		},
+		"tasks-manager": {
+			"page": {
+				"title": "Tasks Manager"
+			}
+		},
+		"time-manager": {
+			"page": {
+				"title": "Time Manager"
+			}
+		},
+		"home": {
+			"page": {
+				"title": "Home"
+			}
 		}
 	},
 	"shared": {
