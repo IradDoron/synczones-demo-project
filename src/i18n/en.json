@@ -3,71 +3,143 @@
 		"career-manager": {
 			"page": {
 				"title": "Career Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"collaboration-manager": {
 			"page": {
 				"title": "Collaboration Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"finance-manager": {
 			"page": {
 				"title": "Finance Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"goals-manager": {
 			"page": {
 				"title": "Goals Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"health-manager": {
 			"page": {
 				"title": "Health Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"hobbies-manager": {
 			"page": {
 				"title": "Hobbies Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"learning-manager": {
 			"page": {
 				"title": "Learning Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"organization-manager": {
 			"page": {
 				"title": "Organization Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"projects-manager": {
 			"page": {
 				"title": "Projects Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"relationships-manager": {
 			"page": {
 				"title": "Relationships Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"routines-manager": {
 			"page": {
 				"title": "Routines Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"skills-manager": {
 			"page": {
 				"title": "Skills Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"tasks-manager": {
 			"page": {
 				"title": "Tasks Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page",
+					"tasks": "Tasks",
+					"dashboard": "Dashboard"
+				}
 			}
 		},
 		"time-manager": {
 			"page": {
 				"title": "Time Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
 			}
 		},
 		"home": {

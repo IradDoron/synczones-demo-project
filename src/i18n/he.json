@@ -3,71 +3,143 @@
 		"career-manager": {
 			"page": {
 				"title": "מנהל קריירה"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"collaboration-manager": {
 			"page": {
 				"title": "מנהל שיתופי פעולה"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"finance-manager": {
 			"page": {
 				"title": "מנהל פיננסים"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"goals-manager": {
 			"page": {
 				"title": "מנהל מטרות"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"health-manager": {
 			"page": {
 				"title": "מנהל בריאות"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"hobbies-manager": {
 			"page": {
 				"title": "מנהל תחביבים"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"learning-manager": {
 			"page": {
 				"title": "מנהל למידה"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"organization-manager": {
 			"page": {
 				"title": "מנהל ארגון"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"projects-manager": {
 			"page": {
 				"title": "מנהל פרויקטים"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"relationships-manager": {
 			"page": {
 				"title": "מנהל יחסים בין אישיים"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"routines-manager": {
 			"page": {
 				"title": "מנהל שגרות"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"skills-manager": {
 			"page": {
 				"title": "מנהל כישורים"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"tasks-manager": {
 			"page": {
 				"title": "מנהל משימות"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי",
+					"tasks": "משימות",
+					"dashboard": "לוח בקרה"
+				}
 			}
 		},
 		"time-manager": {
 			"page": {
 				"title": "מנהל זמן"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי"
+				}
 			}
 		},
 		"home": {
