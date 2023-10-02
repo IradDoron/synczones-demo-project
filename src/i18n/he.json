@@ -31,12 +31,58 @@
 			}
 		},
 		"goals-manager": {
+			"layout": {
+				"urls": {
+					"main-page": "עמוד ראשי",
+					"dashboard": "לוח בקרה",
+					"goals": "מטרות",
+					"visions": "חזון",
+					"visions-components": "חלקי חזון",
+					"visions-ladders": "סולמות חזון"
+				}
+			},
 			"page": {
 				"title": "מנהל מטרות"
 			},
-			"layout": {
-				"urls": {
-					"main-page": "עמוד ראשי"
+			"dashboard": {
+				"page": {
+					"title": "לוח בקרה"
+				}
+			},
+			"goals": {
+				"page": {
+					"title": "מטרות"
+				},
+				"[goal]": {
+					"page": {
+						"title": "עמוד מטרה",
+						"goal not found": "מטרה לא נמצאה",
+						"goal table headers": {
+							"id": "מזהה",
+							"title": "כותרת",
+							"url": "קישור",
+							"related visions IDs": "מזהים של חזונות קשורים",
+							"description": "תיאור",
+							"status": "סטטוס"
+						},
+						"goal process question": "מה אני צריך לעשות כדי להשיג את המטרה?",
+						"tasks question": "אילו משימות אני צריך לעשות?"
+					}
+				}
+			},
+			"visions": {
+				"page": {
+					"title": "חזון"
+				}
+			},
+			"visions-components": {
+				"page": {
+					"title": "חלקי חזון"
+				}
+			},
+			"visions-ladders": {
+				"page": {
+					"title": "סולמות חזון"
 				}
 			}
 		},
@@ -129,6 +175,11 @@
 					"main-page": "עמוד ראשי",
 					"tasks": "משימות",
 					"dashboard": "לוח בקרה"
+				}
+			},
+			"tasks": {
+				"page": {
+					"title": "משימות"
 				}
 			}
 		},

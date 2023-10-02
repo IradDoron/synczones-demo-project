@@ -6,4 +6,5 @@ const dictionaries = {
 	he: () => import('@/i18n/he.json').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: Locale) => dictionaries[locale]();
+export const getDictionaryServer = async (locale: Locale) =>
+	dictionaries[locale]();

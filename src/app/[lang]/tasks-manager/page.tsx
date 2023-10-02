@@ -1,13 +1,13 @@
 import { Locale } from '@/i18n.config';
 import TasksDisplay from '@/shared/TasksDisplay';
-import { getDictionary } from '@/utils/dictionary';
+import { getDictionaryServer } from '@/utils/dictionary';
 
 type Props = {
 	params: { lang: Locale };
 };
 
 const TasksManagerPage = async ({ params: { lang } }: Props) => {
-	const dictionary = await getDictionary(lang);
+	const dictionary = await getDictionaryServer(lang);
 	const { page } = dictionary.app['tasks-manager'];
 	return (
 		<div>

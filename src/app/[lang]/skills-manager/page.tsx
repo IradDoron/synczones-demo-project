@@ -3,14 +3,14 @@ import mockDataSkillsCategories from '@/data/mockDataSkillsCategories';
 import { Locale } from '@/i18n.config';
 import SkillsCategoriesDisplay from '@/shared/SkillsCategoriesDisplay';
 import SkillsDisplay from '@/shared/SkillsDisplay';
-import { getDictionary } from '@/utils/dictionary';
+import { getDictionaryServer } from '@/utils/dictionary';
 
 type Props = {
 	params: { lang: Locale };
 };
 
 const SkillsManagerPage = async ({ params: { lang } }: Props) => {
-	const dictionary = await getDictionary(lang);
+	const dictionary = await getDictionaryServer(lang);
 	const { page } = dictionary.app['skills-manager'];
 	return (
 		<div>

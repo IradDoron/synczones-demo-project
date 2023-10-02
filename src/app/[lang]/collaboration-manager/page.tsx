@@ -1,12 +1,8 @@
-import { Locale } from '@/i18n.config';
-import { getDictionary } from '@/utils/dictionary';
+import { LangParam } from '@/types';
+import { getDictionaryServer } from '@/utils/dictionary';
 
-type Props = {
-	params: { lang: Locale };
-};
-
-const CollaborationManagerPage = async ({ params: { lang } }: Props) => {
-	const dictionary = await getDictionary(lang);
+const CollaborationManagerPage = async ({ params: { lang } }: LangParam) => {
+	const dictionary = await getDictionaryServer(lang);
 	const { page } = dictionary.app['collaboration-manager'];
 	return (
 		<div>

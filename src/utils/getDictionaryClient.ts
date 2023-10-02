@@ -31,4 +31,4 @@ export const getDictionaryClient = (locale: Locale) => {
 		default:
 			return en;
 	}
-}
+};

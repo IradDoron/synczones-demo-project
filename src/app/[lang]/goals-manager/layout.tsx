@@ -1,28 +1,22 @@
 import ManagersNavbar from '@/shared/ManagersNavbar';
+import { LangParam } from '@/types';
+
 import { ReactNode } from 'react';
 
 type Props = {
 	children: ReactNode;
-};
+} & LangParam;
 
-const GaolsManagerLayout = ({ children }: Props) => {
-	const urls = [
-		'main-page',
-		'dashboard',
-		'goals',
-		'visions',
-		'visions-components',
-		'visions-ladders',
-	];
-	const baseUrl = '/goals-manager';
+const GoalsManagerLayout = async ({ children, params: { lang } }: Props) => {
+	const baseUrl = 'goals-manager';
 	return (
 		<div>
 			<br />
 			<br />
-			<ManagersNavbar urls={urls} baseUrl={baseUrl} />
+			<ManagersNavbar baseUrl={baseUrl} params={{ lang }} />
 			{children}
 		</div>
 	);
 };
 
-export default GaolsManagerLayout;
+export default GoalsManagerLayout;

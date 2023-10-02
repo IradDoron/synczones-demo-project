@@ -1,6 +1,6 @@
 import { Locale } from '@/i18n.config';
 import LocaleSwitcher from '@/shared/LocaleSwitcher';
-import { getDictionary } from '@/utils/dictionary';
+import { getDictionaryServer } from '@/utils/dictionary';
 import Link from 'next/link';
 
 type Props = {
@@ -9,7 +9,7 @@ type Props = {
 
 const Navbar = async ({ params }: Props) => {
 	const { lang } = params;
-	const dictionary = await getDictionary(lang);
+	const dictionary = await getDictionaryServer(lang);
 	const { Home, Managers } = dictionary.shared.Navbar.Links;
 
 	return (

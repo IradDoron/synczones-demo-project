@@ -1,31 +1,13 @@
-import { Locale } from '@/i18n.config';
-import { kebabCaseToTitleCase } from '@/utils';
-import { getDictionary } from '@/utils/dictionary';
+import { LangParam, Managers } from '@/types';
+import { getDictionaryServer } from '@/utils/dictionary';
 import Link from 'next/link';
-
-type Managers =
-	| 'career-manager'
-	| 'collaboration-manager'
-	| 'finance-manager'
-	| 'goals-manager'
-	| 'health-manager'
-	| 'hobbies-manager'
-	| 'learning-manager'
-	| 'organization-manager'
-	| 'projects-manager'
-	| 'relationships-manager'
-	| 'routines-manager'
-	| 'skills-manager'
-	| 'tasks-manager'
-	| 'time-manager';
 
 type Props = {
 	baseUrl: Managers;
-	params: { lang: Locale };
-};
+} & LangParam;
 
-const ManagersNavbar = async ({  baseUrl, params: { lang } }: Props) => {
-	const dictionary = await getDictionary(lang);
+const ManagersNavbar = async ({ baseUrl, params: { lang } }: Props) => {
+	const dictionary = await getDictionaryServer(lang);
 	const manager = baseUrl;
 
 	const urlsEntries = Object.entries(dictionary.app[manager].layout.urls).map(
