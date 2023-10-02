@@ -1,6 +1,229 @@
 {
-	"page": {
-		"title": "Home",
-		"description": "This is the home page."
+	"app": {
+		"career-manager": {
+			"page": {
+				"title": "Career Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"collaboration-manager": {
+			"page": {
+				"title": "Collaboration Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"finance-manager": {
+			"page": {
+				"title": "Finance Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"goals-manager": {
+			"layout": {
+				"urls": {
+					"main-page": "Main Page",
+					"dashboard": "Dashboard",
+					"goals": "Goals",
+					"visions": "Visions",
+					"visions-components": "Visions Components",
+					"visions-ladders": "Visions Ladders"
+				}
+			},
+			"page": {
+				"title": "Goals Manager"
+			},
+			"dashboard": {
+				"page": {
+					"title": "Goals Manager Dashboard Page"
+				}
+			},
+			"goals": {
+				"page": {
+					"title": "Goals Page"
+				},
+				"[goal]": {
+					"page": {
+						"title": "Goal Page",
+						"goal not found": "Goal not found",
+						"goal table headers": {
+							"id": "ID",
+							"title": "Title",
+							"url": "URL",
+							"related visions IDs": "Related Visions IDs",
+							"description": "Description",
+							"status": "Status"
+						},
+						"goal process question": "What should I do to achieve this goal?",
+						"tasks question": "What tasks should I do?"
+					}
+				}
+			},
+			"visions": {
+				"page": {
+					"title": "Visions Page"
+				}
+			},
+			"visions-components": {
+				"page": {
+					"title": "Visions Components Page"
+				}
+			},
+			"visions-ladders": {
+				"page": {
+					"title": "Visions Ladders Page"
+				}
+			}
+		},
+		"health-manager": {
+			"page": {
+				"title": "Health Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"hobbies-manager": {
+			"page": {
+				"title": "Hobbies Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"learning-manager": {
+			"page": {
+				"title": "Learning Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"organization-manager": {
+			"page": {
+				"title": "Organization Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"projects-manager": {
+			"page": {
+				"title": "Projects Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"relationships-manager": {
+			"page": {
+				"title": "Relationships Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"routines-manager": {
+			"page": {
+				"title": "Routines Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"skills-manager": {
+			"page": {
+				"title": "Skills Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"tasks-manager": {
+			"page": {
+				"title": "Tasks Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page",
+					"tasks": "Tasks",
+					"dashboard": "Dashboard"
+				}
+			},
+			"tasks": {
+				"page": {
+					"title": "Tasks"
+				}
+			}
+		},
+		"time-manager": {
+			"page": {
+				"title": "Time Manager"
+			},
+			"layout": {
+				"urls": {
+					"main-page": "Main Page"
+				}
+			}
+		},
+		"home": {
+			"page": {
+				"title": "Home"
+			}
+		}
+	},
+	"shared": {
+		"Navbar": {
+			"Links": {
+				"Home": "Home",
+				"Managers": {
+					"Tab": "Managers",
+					"Tasks Manager": "Tasks Manager",
+					"Career Manager": "Career Manager",
+					"Collaboration Manager": "Collaboration Manager",
+					"Finance Manager": "Finance Manager",
+					"Goals Manager": "Goals Manager",
+					"Health Manager": "Health Manager",
+					"Hobbies Manager": "Hobbies Manager",
+					"Learning Manager": "Learning Manager",
+					"Organization Manager": "Organization Manager",
+					"Projects Manager": "Projects Manager",
+					"Relationships Manager": "Relationships Manager",
+					"Routines Manager": "Routines Manager",
+					"Skills Manager": "Skills Manager",
+					"Time Manager": "Time Manager"
+				}
+			}
+		},
+		"LocaleSwitcher": {
+			"Language": "Language"
+		}
 	}
 }

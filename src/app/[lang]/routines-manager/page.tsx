@@ -5,9 +5,9 @@ type Props = {
 	params: { lang: Locale };
 };
 
-const OrganizationManagerPage = async ({ params: { lang } }: Props) => {
+const RoutinesManagerPage = async ({ params: { lang } }: Props) => {
 	const dictionary = await getDictionaryServer(lang);
-	const { page } = dictionary.app['organization-manager'];
+	const { page } = dictionary.app['routines-manager'];
 	return (
 		<div>
 			<h1>{page.title}</h1>
@@ -15,4 +15,4 @@ const OrganizationManagerPage = async ({ params: { lang } }: Props) => {
 	);
 };
 
-export default OrganizationManagerPage;
+export default RoutinesManagerPage;

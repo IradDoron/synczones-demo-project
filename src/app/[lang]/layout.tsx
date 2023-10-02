@@ -35,7 +35,7 @@ export default function RootLayout({
 	return (
 		<html lang={params.lang} dir={getHtmlDirection(params.lang)}>
 			<body className={inter.className}>
-				<Navbar />
+				<Navbar params={params} />
 				{children}
 			</body>
 		</html>

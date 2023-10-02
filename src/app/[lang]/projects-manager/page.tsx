@@ -1,7 +1,16 @@
-const ProjectsManagerPage = () => {
+import { Locale } from '@/i18n.config';
+import { getDictionaryServer } from '@/utils/dictionary';
+
+type Props = {
+	params: { lang: Locale };
+};
+
+const ProjectsManagerPage = async ({ params: { lang } }: Props) => {
+	const dictionary = await getDictionaryServer(lang);
+	const { page } = dictionary.app['projects-manager'];
 	return (
 		<div>
-			<h1>Projects Manager</h1>
+			<h1>{page.title}</h1>
 		</div>
 	);
 };

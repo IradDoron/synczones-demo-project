@@ -1,18 +1,19 @@
+import { Locale } from '@/i18n.config';
 import ManagersNavbar from '@/shared/ManagersNavbar';
 import { ReactNode } from 'react';
 
 type Props = {
 	children: ReactNode;
+	params: { lang: Locale };
 };
 
-const TasksManagerLayout = ({ children }: Props) => {
-	const urls = ['main-page', 'dashboard', 'tasks'];
-	const baseUrl = '/tasks-manager';
+const TasksManagerLayout = ({ children, params }: Props) => {
+	const baseUrl = 'tasks-manager';
 	return (
 		<div>
 			<br />
 			<br />
-			<ManagersNavbar urls={urls} baseUrl={baseUrl} />
+			<ManagersNavbar baseUrl={baseUrl} params={params} />
 			{children}
 		</div>
 	);

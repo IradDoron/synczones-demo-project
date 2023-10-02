@@ -5,26 +5,29 @@ import mockDataGoals from '@/data/mockDataGoals';
 import AddTaskModal from '@/shared/AddTaskModal';
 import GoalProcessDisplay from '@/shared/GoalProcessDisplay';
 import GoalTasksDisplay from '@/shared/GoalTasksDisplay';
-import { Goal } from '@/types';
+import { Goal, LangParam } from '@/types';
 import {
 	getCommaSeparatedStringsFromArray,
 	getGoalFromGoalId,
 	getGoalIdFromGoalUrl,
 } from '@/utils';
+import { getDictionaryClient } from '@/utils/getDictionaryClient';
 import { useParams } from 'next/navigation';
 import { useState } from 'react';
 
-const GoalPage = () => {
+const GoalPage = ({ params: { lang } }: LangParam) => {
 	const { goal } = useParams() as { goal: string };
 	const goalId = getGoalIdFromGoalUrl(mockDataGoals, goal);
 	const goalData = getGoalFromGoalId(mockDataGoals, goalId);
 	const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
+	const dictionary = getDictionaryClient(lang);
+	const { page } = dictionary.app['goals-manager'].goals['[goal]'];
 
 	if (!goalData) {
 		return (
 			<div>
-				<h1>Goal Page</h1>
-				<p>Goal not found</p>
+				<h1>{page.title}</h1>
+				<p>{page['goal not found']}</p>
 			</div>
 		);
 	}
@@ -40,8 +43,7 @@ const GoalPage = () => {
 
 	return (
 		<div>
-			<h1>Goal Page</h1>
-
+			<h1>{page.title}</h1>
 			<div>
 				<table>
 					<caption
@@ -53,12 +55,12 @@ const GoalPage = () => {
 					</caption>
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Title</th>
-							<th>URL</th>
-							<th>Related Visions IDs</th>
-							<th>Description</th>
-							<th>Status</th>
+							<th>{page['goal table headers'].id}</th>
+							<th>{page['goal table headers'].title}</th>
+							<th>{page['goal table headers'].url}</th>
+							<th> {page['goal table headers']['related visions IDs']}</th>
+							<th>{page['goal table headers'].description}</th>
+							<th> {page['goal table headers'].status}</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -78,9 +80,9 @@ const GoalPage = () => {
 						</tr>
 					</tbody>
 				</table>
-				<h3>What should I do to achieve this goal?</h3>
+				<h3>{page['goal process question']}</h3>
 				<GoalProcessDisplay goalProcess={process} />
-				<h3>What tasks should I do?</h3>
+				<h3>{page['tasks question']}</h3>
 				<button onClick={handleAddTask}>Add Task</button>
 				<GoalTasksDisplay goalId={id} />
 				<button onClick={handleAddTask}>Add Task</button>
