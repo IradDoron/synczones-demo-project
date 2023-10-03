@@ -46,7 +46,9 @@ const initNewTask = {
 	subTasksIds: [],
 	attachments: [],
 	labels: [],
-	createDate: new Date(),
+	createDate: new Date(
+		'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+	),
 	startDate: null,
 	completedDate: null,
 	dueDate: null,
@@ -87,7 +89,7 @@ const AddTaskModal = ({ isOpen, setIsOpen, info }: Props) => {
 				relatedGoalsIds: [...formData.relatedGoalsIds, goalId],
 			});
 		}
-	}, [taskId, goalId]);
+	}, [taskId, goalId, formData]);
 
 	useEffect(() => {
 		const { title } = formData;

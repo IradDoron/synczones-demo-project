@@ -36,7 +36,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -78,7 +80,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -120,7 +124,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -160,7 +166,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -201,7 +209,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -249,7 +259,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -290,7 +302,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -332,7 +346,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -372,7 +388,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -415,7 +433,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -458,7 +478,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -500,7 +522,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -548,7 +572,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -590,7 +616,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -640,7 +668,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -682,7 +712,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -725,7 +757,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -772,7 +806,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -814,7 +850,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -854,7 +892,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -882,7 +922,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -928,7 +970,9 @@ const mockDataTasks: Task[] = [
 		dueDate: null,
 		completedDate: null,
 		startDate: null,
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		labels: [],
 		attachments: [],
 		subTasksIds: [],
@@ -1072,7 +1116,9 @@ const mockDataTasks: Task[] = [
 		subTasksIds: [],
 		attachments: [],
 		labels: [],
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		startDate: null,
 		completedDate: null,
 		dueDate: null,
@@ -1099,7 +1145,9 @@ const mockDataTasks: Task[] = [
 		subTasksIds: [],
 		attachments: [],
 		labels: [],
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		startDate: null,
 		completedDate: null,
 		dueDate: null,
@@ -1126,7 +1174,9 @@ const mockDataTasks: Task[] = [
 		subTasksIds: [],
 		attachments: [],
 		labels: [],
-		createDate: new Date(),
+		createDate: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		startDate: null,
 		completedDate: null,
 		dueDate: null,

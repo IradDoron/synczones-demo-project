@@ -6,7 +6,7 @@ import {
 	WeeklyRecurrence,
 	YearlyRecurrence,
 } from '@/types';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Daily from './Daily';
 import Monthly from './Monthly';
 import Weekly from './Weekly';

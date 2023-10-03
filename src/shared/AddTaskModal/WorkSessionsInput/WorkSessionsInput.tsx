@@ -12,7 +12,9 @@ const WorkSessionsInput = ({ formData, setFormData }: Props) => {
 	const [currentWorkSession, setCurrentWorkSession] = useState<WorkSession>({
 		id: (formData.workSessions?.length || 0) + 1,
 		taskId: formData.id,
-		startTime: new Date(),
+		startTime: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		endTime: null,
 		duration: null,
 		mood: null,
@@ -22,7 +24,9 @@ const WorkSessionsInput = ({ formData, setFormData }: Props) => {
 	});
 
 	const [currentBreak, setCurrentBreak] = useState<Break>({
-		startTime: new Date(),
+		startTime: new Date(
+			'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+		),
 		endTime: null,
 		duration: null,
 		reason: '',
@@ -85,7 +89,9 @@ const WorkSessionsInput = ({ formData, setFormData }: Props) => {
 		});
 
 		setCurrentBreak({
-			startTime: new Date(),
+			startTime: new Date(
+				'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+			),
 			endTime: null,
 			duration: null,
 			reason: '',
@@ -111,7 +117,9 @@ const WorkSessionsInput = ({ formData, setFormData }: Props) => {
 		setCurrentWorkSession({
 			id: (formData.workSessions?.length || 0) + 2,
 			taskId: formData.id,
-			startTime: new Date(),
+			startTime: new Date(
+				'Tue Oct 03 2023 08:38:55 GMT+0300 (Israel Daylight Time'
+			),
 			endTime: null,
 			duration: null,
 			mood: null,

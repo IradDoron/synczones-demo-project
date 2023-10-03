@@ -17,7 +17,7 @@ const TaskActionsDisplay = ({ taskId }: Props) => {
 
 	useEffect(() => {
 		setCurrentTaskData(taskData);
-	}, []);
+	}, [taskData]);
 
 	const handleEdit = () => {
 		setIsModalOpen(true);

@@ -1,5 +1,7 @@
 import { Locale, i18n } from '@/i18n.config';
+import AppWrapper from '@/shared/AppWrapper';
 import Navbar from '@/shared/Navbar';
+import ThemeSwitch from '@/shared/ThemeSwitch';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -35,8 +37,12 @@ export default function RootLayout({
 	return (
 		<html lang={params.lang} dir={getHtmlDirection(params.lang)}>
 			<body className={inter.className}>
-				<Navbar params={params} />
-				{children}
+				<AppWrapper>
+					<ThemeSwitch />
+					<h1 className='text-3xl font-bold underline'>Hello, Next.js!</h1>
+					<Navbar params={params} />
+					{children}
+				</AppWrapper>
 			</body>
 		</html>
 	);
